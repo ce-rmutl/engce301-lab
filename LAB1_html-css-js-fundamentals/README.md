@@ -23,9 +23,7 @@
 
 ---
 
-## 🔧 Part 1: Template Implementation (1.5 hours)
-
-### 🎯 Part 1: Template Implementation (1.5 ชั่วโมง)
+## 🔧 Part 1: Template Implementation (1.5 ชั่วโมง)
 
 * นักศึกษาเรียนรู้จากการทำตามแบบอย่างที่ละเอียด
 * ครอบคลุม HTML5 semantic structure, CSS3 modern features, responsive design
@@ -862,10 +860,10 @@ git push -u origin main
 
 ---
 
-## 🚀 Part 2: Pair Programming Features (1.5 hours)
+## 🚀 Part 2: Pair Programming Features  (1.5 ชั่วโมง)
 
-### 🚀 Part 2: Pair Programming (1.5 ชั่วโมง)
 นักศึกษา 2 คนทำงานร่วมกันและแบ่งหน้าที่:
+
 ### นักศึกษา A:
 
 1. Dark Mode Toggle - เปลี่ยนธีมเว็บไซต์
