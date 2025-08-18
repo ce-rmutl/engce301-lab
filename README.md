@@ -36,7 +36,7 @@ Testing:      Jest, Cypress, React Testing Library
 
 | Week | Todo | Topic | Duration | Type | Focus |
 |:-----:|:-----:|----------|------|-------|-------|
-| **1** | INIT | [Modern Software Development](Development-Environment-Setup) | 2 hrs | Workshop | Environment Setup |
+| **1** | DEV-ENV | [Modern Software Development](Development-Environment-Setup) | 2 hrs | Workshop | Environment Setup |
 | **2** | TASK#1 | [Version Control with Git & GitHub](TASK1_VersionControl-with-Git-GitHub) | 3 hrs | Pair Project | Collaboration |
 | **3** | TASK#2 | [HTML5 & CSS3 Fundamentals](TASK2_html-css-js-fundamentals) | 3 hrs | Pair Task | Portfolio Website |
 | **4** | LAB1 | [JavaScript ES6+ & DOM Manipulation](LAB1_JavaScript_ES6_DOM_Manipulation) | 3 hrs | Individual | Interactive App |
