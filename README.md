@@ -211,3 +211,20 @@
 | **Lab Assignments** |   15%   |
 | **การเข้าร่วม + Quiz** |   5%    |
 | **รวม** |  100%   |
+
+---
+
+<div align="center">
+
+### 🌟 **Ready to Build Amazing Things?**
+
+**Your journey to becoming a professional software engineer starts here!**
+
+[📧 Contact Instructors](mailto:thanit@rmutl.ac.th) | [💬 Join Discord](https://discord.gg/engce301) | [📚 Access Resources](https://resources.engce301.edu)
+
+---
+
+*Last Updated: July 2025 | Assessment Guidelines Version 3.0*  
+*© 2025 ENGCE301 Course Team. All rights reserved.*
+
+</div>
