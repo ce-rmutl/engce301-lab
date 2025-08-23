@@ -1,4 +1,4 @@
-# 🚀 ENGCE301: Software Design and Development - Course Repository
+# 🚀 ENGCE301: Software Design and Development
 
 ## Laboratory Sessions Repository
 
@@ -10,7 +10,7 @@
 
 ## 🗺️ ภาพรวมเส้นทางการเรียนรู้ (Course Roadmap)
 
-เราจะเดินทางผ่าน 4 المرحلةหลักเพื่อสร้างทักษะการเป็นวิศวกรซอฟต์แวร์ที่สมบูรณ์:
+เราจะเดินทางผ่าน 4 Phase หลักเพื่อสร้างทักษะการเป็นวิศวกรซอฟต์แวร์ที่สมบูรณ์:
 1.  **Phase 1 (Weeks 1-6):** **วางรากฐานวิศวกรรมซอฟต์แวร์** - เรียนรู้หลักการ, การทำงานร่วมกับทีมด้วย Git, การวิเคราะห์ความต้องการ, และการออกแบบระบบตั้งแต่ภาพใหญ่ (High-Level) สู่ภาพย่อย (Low-Level)
 2.  **Phase 2 (Weeks 7, 9-13):** **สร้าง Full-Stack Application** - ลงมือปฏิบัติจริงกับการพัฒนา Frontend ด้วย React และ Backend ด้วย Node.js พร้อมเชื่อมต่อฐานข้อมูล
 3.  **Phase 3 (Weeks 14-15):** **ประกันคุณภาพและนำส่งซอฟต์แวร์** - เรียนรู้การทดสอบซอฟต์แวร์อัตโนมัติและภาพรวมของ DevOps เพื่อนำแอปพลิเคชันขึ้นสู่ Production
@@ -39,13 +39,13 @@
 
 | สัปดาห์ที่ | หัวข้อ และสรุปปฏิบัติการ (Topic & Lab Summary) | ลิงก์ไปยัง Lab |
 | :---: | :--- | :---: |
-| **01** | **Introduction to Software Engineering & Agile/DevOps** <br> *Lab: ตั้งค่า Environment (VS Code, Node, Git) และสร้าง "Hello World"* | [LAB-01](https://www.google.com/search?q=./LAB-01) |
-| **02** | **Version Control & Collaborative Development** <br> *Lab: ฝึกใช้คำสั่ง Git พื้นฐานและกระบวนการ Pull Request* | [LAB-02](https://www.google.com/search?q=./LAB-02) |
-| **03** | **Requirements Analysis & User Stories** <br> *Lab: Workshop การเขียน User Stories และสร้าง Mockup ด้วย HTML/CSS* | [LAB-03](https://www.google.com/search?q=./LAB-03) |
-| **04** | **System Modeling & UML Design** <br> *Lab: สร้าง Use Case, Class, และ Sequence Diagrams* | [LAB-04](https://www.google.com/search?q=./LAB-04) |
-| **05** | **Software Architecture & High Level Design** <br> *Lab: ออกแบบ Architecture Diagram และ Component Diagram* | [LAB-05](https://www.google.com/search?q=./LAB-05) |
-| **06** | **Low Level Design with React.js** <br> *Lab: ออกแบบและ Refactor React Components (Presentational/Container)* | [LAB-06](https://www.google.com/search?q=./LAB-06) |
-| **07** | **Frontend Development with Modern JavaScript (ES6+)** <br> *Lab: ฝึกใช้ ES6+, DOM Manipulation, และ `fetch()` API* | [LAB-07](https://www.google.com/search?q=./LAB-07) |
+| **01** | **Introduction to Software Engineering & Agile/DevOps** <br> *Lab: ตั้งค่า Environment (VS Code, Node, Git) และสร้าง "Hello World"* | [LAB-01](LAB-01) |
+| **02** | **Version Control & Collaborative Development** <br> *Lab: ฝึกใช้คำสั่ง Git พื้นฐานและกระบวนการ Pull Request* | [LAB-02](LAB-02) |
+| **03** | **Requirements Analysis & User Stories** <br> *Lab: Workshop การเขียน User Stories และสร้าง Mockup ด้วย HTML/CSS* | [LAB-03](LAB-03) |
+| **04** | **System Modeling & UML Design** <br> *Lab: สร้าง Use Case, Class, และ Sequence Diagrams* | [LAB-04](LAB-04) |
+| **05** | **Software Architecture & High Level Design** <br> *Lab: ออกแบบ Architecture Diagram และ Component Diagram* | [LAB-05](LAB-05) |
+| **06** | **Low Level Design with React.js** <br> *Lab: ออกแบบและ Refactor React Components (Presentational/Container)* | [LAB-06](LAB-06) |
+| **07** | **Frontend Development with Modern JavaScript (ES6+)** <br> *Lab: ฝึกใช้ ES6+, DOM Manipulation, และ `fetch()` API* | [LAB-07](LAB-07) |
 | **08** | 📝 **สอบกลางภาค (Midterm Examination)** <br> *(ทบทวนเนื้อหาสัปดาห์ที่ 1-7)* | - |
 | **09** | **Introduction to React.js** <br> *Lab: สร้างโปรเจกต์ด้วย Create React App และใช้ Hooks (useState, useEffect)* | [LAB-09](https://www.google.com/search?q=./LAB-09) |
 | **10**| **Advanced React & Component Design** <br> *Lab: พัฒนา Custom Hooks และทดสอบ Components* | [LAB-10](https://www.google.com/search?q=./LAB-10) |
