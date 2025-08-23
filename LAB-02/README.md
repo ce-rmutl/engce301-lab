@@ -1,5 +1,8 @@
-# TASK#2: Portfolio Website Development
-## HTML5 & CSS3 Fundamentals
+# LAB-02: Version Control & Collaborative Development
+
+## TASK#2: Portfolio Website Development
+
+### HTML5 & CSS3 Fundamentals
 
 ### 🎯 Lab Objectives
 - เข้าใจโครงสร้างและ Semantic HTML5
