@@ -5,7 +5,7 @@
 **Version:** 1.0  
 **วันที่:** มีนาคม 2567  
 **สถานะ:** Final  
-**จัดทำโดย:** นักศึกษาวิศวกรรมซอฟต์แวร์ ปี 2  
+**จัดทำโดย:** นักศึกษาวิศวกรรมคอมพิวเตอร์  
 **วัตถุประสงค์:** เพื่อการเรียนรู้และฝึกปฏิบัติ Software Requirements Engineering
 
 ---
@@ -327,7 +327,7 @@ const EMISSION_FACTORS = {
 
 ## สรุป
 
-เอกสาร Requirements Discovery นี้เป็นแนวทางสำหรับนักศึกษาวิศวกรรมซอฟต์แวร์ปี 2 ในการพัฒนาระบบ EcoTrack ซึ่งเป็นระบบติดตาม Carbon Footprint ขนาดเล็ก โดยมีจุดมุ่งหมายเพื่อ:
+เอกสาร Requirements Discovery นี้เป็นแนวทางสำหรับนักศึกษาวิศวกรรมคอมพิวเตอร์ ในการพัฒนาระบบ EcoTrack ซึ่งเป็นระบบติดตาม Carbon Footprint ขนาดเล็ก โดยมีจุดมุ่งหมายเพื่อ:
 
 1. **ฝึกปฏิบัติ Requirements Engineering** - การสร้าง Personas, User Stories, Story Mapping
 2. **เรียนรู้ Agile Development** - การทำงานแบบ Sprint, Daily Standup, Retrospective
