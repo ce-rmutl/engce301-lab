@@ -4,9 +4,9 @@
 
 ---
 
-### [Workshop 1: ระบบจองห้องประชุมออนไลน์สำหรับบริษัท](workshop1)
+### [Workshop 1: ระบบจองห้องประชุมออนไลน์สำหรับบริษัท](meeting-room)
 
-### [Workshop 2: แอปพลิเคชันสั่งอาหารออนไลน์](workshop2)
+### [Workshop 2: แอปพลิเคชันสั่งอาหารออนไลน์](food-delivery)
 
 ---
 **ENGCE301: การออกแบบและพัฒนาซอฟต์แวร์ Software Design and Development**
