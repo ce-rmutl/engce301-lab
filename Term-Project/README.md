@@ -1,390 +1,705 @@
-# 🏆 **FINAL CAPSTONE PROJECT**
-## **Weeks 14-15 | Duration: 2 Weeks | Weight: 30%**
+# 🚀 Agent Wallboard System - Term Project
 
-### 📋 **Project Overview**
-ทีมละ 4-5 คนจะร่วมกันสร้าง **Professional-Grade Web Application** ที่แก้ปัญหาจริงในชุมชนหรือมหาวิทยาลัย โดยใช้เทคโนโลยีและความรู้ทั้งหมดที่เรียนมาตลอดเทอม
+## Design for <br> ENGCE301: Software Design and Development
 
-### 🎯 **Project Objectives**
-- สร้างแอปพลิเคชันที่มีคุณภาพระดับมืออาชีพ
-- แสดงความสามารถในการทำงานเป็นทีม
-- ประยุกต์ใช้เทคโนโลยีสมัยใหม่ในการแก้ปัญหาจริง
-- พัฒนาทักษะการนำเสนอและการเขียนเอกสารทางเทคนิค
+[![Course](https://img.shields.io/badge/Course-ENGCE301-blue)](https://github.com) [![Language](https://img.shields.io/badge/Language-JavaScript-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![Framework](https://img.shields.io/badge/Framework-React-61DAFB)](https://reactjs.org/) [![Backend](https://img.shields.io/badge/Backend-Node.js-339933)](https://nodejs.org/) [![Database](https://img.shields.io/badge/Database-MSSQL%2BMongoDB-orange)](https://www.microsoft.com/en-us/sql-server) [![Architecture](https://img.shields.io/badge/Architecture-3--Tier-green)](https://en.wikipedia.org/wiki/Multitier_architecture)
+
+> **Real-time Call Center Agent Monitoring และ Communication System**  
+> ระบบติดตามสถานะ agents และการสื่อสารแบบ real-time สำหรับ call center operations
 
 ---
 
-## 🚀 **Project Categories**
+## 📋 สารบัญ
 
-### **Category A: Community Solutions**
-แก้ปัญหาในชุมชนหรือสังคม
-
-#### **A1: Local Business Management System**
-- 🏪 **For**: ร้านค้าท้องถิ่น, SMEs
-- 🎯 **Purpose**: ระบบจัดการคำสั่งซื้อ, สต็อก, ลูกค้า
-- 🔧 **Features**: POS system, inventory management, customer CRM
-
-#### **A2: Community Event Platform**
-- 🎪 **For**: ชุมชนในพื้นที่
-- 🎯 **Purpose**: จัดการและประชาสัมพันธ์กิจกรรม
-- 🔧 **Features**: Event creation, registration, notification system
-
-#### **A3: Local Transportation System**
-- 🚗 **For**: รถร่วม, สองแถว ในพื้นที่
-- 🎯 **Purpose**: ระบบจองและติดตามรถ
-- 🔧 **Features**: Route planning, real-time tracking, booking system
-
-### **Category B: Educational Solutions**
-เน้นการศึกษาและการเรียนรู้
-
-#### **B1: Smart Learning Management System**
-- 🎓 **For**: โรงเรียน, มหาวิทยาลัย
-- 🎯 **Purpose**: ระบบการเรียนการสอนออนไลน์
-- 🔧 **Features**: Course management, live streaming, assessment tools
-
-#### **B2: Student Collaboration Platform**
-- 👥 **For**: นักศึกษา
-- 🎯 **Purpose**: แพลตฟอร์มทำงานกลุ่มและแชร์ความรู้
-- 🔧 **Features**: Project collaboration, knowledge sharing, peer review
-
-#### **B3: Skill Development Tracker**
-- 📈 **For**: ผู้เรียนทุกระดับ
-- 🎯 **Purpose**: ติดตามและพัฒนาทักษะ
-- 🔧 **Features**: Skill assessment, learning path, progress tracking
-
-### **Category C: Health & Lifestyle**
-เน้นสุขภาพและการดูแลตนเอง
-
-#### **C1: Personal Health Dashboard**
-- 🏥 **For**: บุคคลทั่วไป
-- 🎯 **Purpose**: ติดตามสุขภาพส่วนบุคคล
-- 🔧 **Features**: Health metrics, appointment scheduling, medication reminders
-
-#### **C2: Fitness & Nutrition Tracker**
-- 💪 **For**: คนรักสุขภาพ
-- 🎯 **Purpose**: จัดการการออกกำลังกายและโภชนาการ
-- 🔧 **Features**: Workout planning, nutrition tracking, progress analytics
-
-#### **C3: Mental Health Support Platform**
-- 🧠 **For**: คนทั่วไปที่ต้องการดูแลสุขภาพจิต
-- 🎯 **Purpose**: แพลตฟอร์มสนับสนุนสุขภาพจิต
-- 🔧 **Features**: Mood tracking, meditation guides, peer support
-
-### **Category D: Custom Innovation**
-โปรเจกต์ที่นักศึกษาเสนอเอง
-
-#### **Requirements for Custom Projects:**
-- 📋 **Proposal Required**: เสนอโครงการพร้อมเหตุผล
-- 🎯 **Problem Statement**: ระบุปัญหาที่แก้ไขได้ชัดเจน
-- 👥 **Target Users**: กำหนดกลุ่มผู้ใช้งานเป้าหมาย
-- 🔧 **Technical Complexity**: ความซับซ้อนเทียบเท่าตัวอย่างอื่น
+- [ภาพรวมโครงการ](#-ภาพรวมโครงการ)
+- [วัตถุประสงค์การเรียนรู้](#-วัตถุประสงค์การเรียนรู้)
+- [เทคโนโลยีที่ใช้](#-เทคโนโลยีที่ใช้)
+- [System Architecture](#-system-architecture)
+- [คุณสมบัติหลัก](#-คุณสมบัติหลัก)
+- [การเตรียมความพร้อม](#-การเตรียมความพร้อม)
+- [แผนการพัฒนา](#-แผนการพัฒนา)
+- [ทีมงานและบทบาท](#-ทีมงานและบทบาท)
+- [การประเมินผล](#-การประเมินผล)
+- [Resources และเอกสาร](#-resources-และเอกสาร)
 
 ---
 
-## 🛠️ **Technical Requirements**
+## 🎯 ภาพรวมโครงการ
 
-### **Mandatory Technology Stack**
-```javascript
-Frontend:
-✅ React.js with hooks and context
-✅ React Router for navigation
-✅ CSS framework (Tailwind CSS recommended)
-✅ Responsive design (mobile-first)
-✅ State management (Context API or Redux)
+### Problem Statement
+Call centers ในปัจจุบันยังประสบปัญหา:
+- 📊 **ขาดการติดตามสถานะ real-time** ของ agents
+- 💬 **การสื่อสารไม่มีประสิทธิภาพ** ระหว่าง supervisors และ agents
+- 📈 **ไม่มี dashboard** สำหรับการจัดการทีม
+- 🔄 **การติดตามแบบ manual** ที่เสียเวลาและผิดพลาดได้
 
-Backend:
-✅ Node.js with Express.js
-✅ RESTful API design
-✅ MongoDB with Mongoose ODM
-✅ JWT authentication
-✅ Input validation and error handling
+### Solution Overview
+พัฒนา **Agent Wallboard System** ที่ให้ความสามารถ:
+- ✅ **Real-time Status Monitoring**: ติดตามสถานะ agents แบบ real-time
+- ✅ **Bidirectional Communication**: การสื่อสารสองทิศทางผ่าน WebSocket
+- ✅ **Interactive Dashboard**: หน้าจอแสดงสถิติและการจัดการ
+- ✅ **Multi-platform Support**: Desktop app สำหรับ agents, Web dashboard สำหรับ supervisors
 
-DevOps & Tools:
-✅ Git version control with GitHub
-✅ Environment variables (.env)
-✅ API documentation (Postman or Swagger)
-✅ Testing (Jest for backend, React Testing Library)
-✅ Deployment (Vercel/Netlify + MongoDB Atlas)
+### Business Impact
+- 🚀 **เพิ่มประสิทธิภาพ** การดำเนินงาน 25%
+- ⚡ **ลดเวลาการตอบสนอง** 40%
+- 📉 **ลดงาน manual monitoring** 60%
+- 📊 **ให้ข้อมูลสำหรับตัดสินใจ** แบบ real-time
+
+---
+
+## 🎓 วัตถุประสงค์การเรียนรู้
+
+โครงการนี้ออกแบบมาเพื่อให้นักศึกษา **ประยุกต์ใช้ความรู้ทาง Software Engineering** ในการแก้ปัญหาจริง:
+
+### 1. Software Design Principles
+- 🏗️ **3-Tier Architecture**: Separation of concerns
+- 📐 **Design Patterns**: MVC, Repository, Factory patterns
+- 🔧 **SOLID Principles**: Object-oriented design
+- 📋 **Requirements Engineering**: From user stories to implementation
+
+### 2. Full-Stack Development Skills
+- 🖥️ **Frontend**: React.js, Electron.js, responsive design
+- ⚙️ **Backend**: Node.js, Express.js, RESTful APIs
+- 💾 **Database**: MSSQL, MongoDB, data modeling
+- 🌐 **Real-time**: WebSocket communication
+
+### 3. Software Engineering Practices
+- 📝 **Documentation**: Requirements, Design, Testing
+- 🧪 **Testing**: Unit, Integration, System, UAT
+- 🔄 **Version Control**: Git workflows, collaboration
+- 🚀 **Deployment**: Build processes, environment management
+
+### 4. Project Management
+- 📈 **Agile Methodology**: Sprints, user stories, retrospectives
+- 👥 **Team Collaboration**: Roles, responsibilities, communication
+- ⏰ **Timeline Management**: Milestones, dependencies, risk management
+- 📊 **Quality Assurance**: Code reviews, testing strategies
+
+---
+
+## 💻 เทคโนโลยีที่ใช้
+
+### Frontend Technologies
+| Technology | Purpose | Version | Learning Focus |
+|------------|---------|---------|----------------|
+| **React.js** | Web Dashboard UI | 18+ | Component-based development, State management |
+| **Electron.js** | Desktop Application | 22+ | Cross-platform desktop apps, IPC communication |
+| **HTML5/CSS3** | UI Structure & Styling | Latest | Responsive design, Modern CSS |
+| **JavaScript ES6+** | Frontend Logic | ES2022 | Async programming, Modules, Arrow functions |
+
+### Backend Technologies
+| Technology | Purpose | Version | Learning Focus |
+|------------|---------|---------|----------------|
+| **Node.js** | Runtime Environment | 18+ | Server-side JavaScript, Event-driven programming |
+| **Express.js** | Web Framework | 4+ | RESTful APIs, Middleware, Routing |
+| **WebSocket** | Real-time Communication | Latest | Bidirectional communication, Event handling |
+| **JWT** | Authentication | Latest | Token-based authentication, Security |
+
+### Database Technologies
+| Technology | Purpose | Use Case | Learning Focus |
+|------------|---------|----------|----------------|
+| **MSSQL Server** | Relational Database | Agent data, Transactions | SQL, Normalization, ACID properties |
+| **MongoDB** | Document Database | Real-time data, Sessions | NoSQL, Document modeling, Aggregation |
+
+### Development Tools
+| Tool | Purpose | Learning Benefit |
+|------|---------|------------------|
+| **VS Code** | IDE | Code editing, Extensions, Debugging |
+| **Git/GitHub** | Version Control | Collaboration, Branching, Pull requests |
+| **Postman** | API Testing | API development, Testing, Documentation |
+| **Draw.io** | Diagrams | System modeling, Documentation |
+
+---
+
+## 🏗️ System Architecture
+
+### 3-Tier Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        3-TIER ARCHITECTURE                          │
+├─────────────────┬─────────────────────┬─────────────────────────────┤
+│  TIER 1         │      TIER 2         │         TIER 3              │
+│ PRESENTATION    │   APPLICATION       │         DATA                │
+├─────────────────┼─────────────────────┼─────────────────────────────┤
+│                 │                     │                             │
+│ 🖥️ Desktop App  │ 🔧 Node.js Server   │ 🗄️ MSSQL Database          │
+│   (Electron)    │   - Express.js      │   - Agent Data              │
+│   - Agent UI    │   - REST APIs       │   - Transaction Logs        │
+│   - Real-time   │   - Authentication  │   - User Management         │
+│                 │                     │                             │
+│ 🌐 Web Dashboard│ 🔗 WebSocket Server │ 🍃 MongoDB Database         │
+│   (React)       │   - Real-time Comm  │   - Session Data            │
+│   - Supervisor  │   - Message Routing │   - Real-time Metrics       │
+│   - Manager     │   - Connection Mgmt │   - Activity Logs           │
+│                 │                     │                             │
+└─────────────────┴─────────────────────┴─────────────────────────────┘
 ```
 
-### **Optional Advanced Features** (Bonus Points)
-```javascript
-Advanced Technologies:
-🌟 WebSocket for real-time features
-🌟 Progressive Web App (PWA)
-🌟 Payment integration (Stripe/PayPal sandbox)
-🌟 File upload with cloud storage
-🌟 Email notifications
-🌟 Social media authentication
-🌟 Push notifications
-🌟 Data visualization with D3.js or Chart.js
-🌟 Mobile app with React Native
-🌟 CI/CD pipeline with GitHub Actions
+### Communication Flow
+
+```mermaid
+graph TB
+    A[Agent Desktop App] -->|HTTPS/WSS| B[API Server]
+    C[Supervisor Web Dashboard] -->|HTTPS/WSS| B
+    D[Manager Web Dashboard] -->|HTTPS/WSS| B
+    
+    B -->|SQL Queries| E[MSSQL Database]
+    B -->|NoSQL Operations| F[MongoDB Database]
+    
+    B -->|WebSocket Broadcast| A
+    B -->|WebSocket Broadcast| C
+    B -->|WebSocket Broadcast| D
+    
+    subgraph "Tier 1 - Presentation"
+        A
+        C  
+        D
+    end
+    
+    subgraph "Tier 2 - Application"
+        B
+    end
+    
+    subgraph "Tier 3 - Data"
+        E
+        F
+    end
+```
+
+### Component Responsibilities
+
+#### 🖥️ **Tier 1: Presentation Layer**
+- **Agent Desktop App**: Status management, Notification receiving, Local user interface
+- **Web Dashboard**: Team monitoring, Message sending, Report viewing, System administration
+
+#### ⚙️ **Tier 2: Application Layer**  
+- **REST API Server**: Business logic, Data validation, Authentication/Authorization
+- **WebSocket Server**: Real-time communication, Message broadcasting, Connection management
+
+#### 💾 **Tier 3: Data Layer**
+- **MSSQL**: Persistent data storage, Transaction integrity, Relational data modeling
+- **MongoDB**: Session management, Real-time data caching, Flexible document storage
+
+---
+
+## ⭐ คุณสมบัติหลัก
+
+### 🎯 Epic 1: Real-time Agent Status Monitoring
+**เป้าหมาย**: ติดตามและแสดงสถานะของ agents แบบ real-time
+
+#### Features:
+- ✅ **Agent Status Display**: แสดงสถานะปัจจุบัน (Available, Active, Wrap, Not Ready, Offline)
+- ✅ **Real-time Updates**: อัปเดตสถานะทันทีผ่าน WebSocket
+- ✅ **Status History**: บันทึกประวัติการเปลี่ยนสถานะ
+- ✅ **Color Coding**: ใช้สีแสดงสถานะเพื่อง่ายต่อการมองเห็น
+
+#### ใช้เทคโนโลยี:
+- **Frontend**: React hooks (useState, useEffect), WebSocket client
+- **Backend**: WebSocket server, Express.js endpoints
+- **Database**: MSSQL สำหรับ agent data, MongoDB สำหรับ real-time status
+
+---
+
+### 💬 Epic 2: Supervisor Communication System
+**เป้าหมาย**: ให้ supervisors สื่อสารกับ agents ได้แบบ real-time
+
+#### Features:
+- ✅ **Message Sending**: Supervisor ส่งข้อความถึง agent เฉพาะคน
+- ✅ **Desktop Notifications**: Agent รับ notification แบบ popup
+- ✅ **Message History**: บันทึกประวัติการสื่อสาร
+- ✅ **Delivery Status**: ยืนยันการส่งและรับข้อความ
+
+#### ใช้เทคโนโลยี:
+- **Frontend**: Notification API, React state management
+- **Backend**: WebSocket message routing, Express.js message APIs
+- **Database**: MongoDB สำหรับ message storage และ history
+
+---
+
+### 👤 Epic 3: Agent Self-Service Portal  
+**เป้าหมาย**: ให้ agents จัดการงานของตัวเองได้
+
+#### Features:
+- ✅ **Agent Authentication**: Login ด้วย Agent Code
+- ✅ **Profile Management**: แสดงข้อมูลส่วนตัวและสถานะปัจจุบัน
+- ✅ **Status Control**: เปลี่ยนสถานะการทำงานตามความต้องการ
+- ✅ **Activity Dashboard**: ดูสถิติการทำงานส่วนตัว
+
+#### ใช้เทคโนโลยี:
+- **Frontend**: Electron.js desktop app, Form handling
+- **Backend**: JWT authentication, Express.js user management
+- **Database**: MSSQL สำหรับ user credentials และ profile data
+
+---
+
+### 📊 Epic 4: Management Dashboard & Reporting
+**เป้าหมาย**: ให้ supervisors และ managers ดูภาพรวมและสถิติ
+
+#### Features:
+- ✅ **Team Dashboard**: แสดงสถิติทีมแบบ real-time
+- ✅ **Visual Charts**: Graphs และ charts สำหรับ data visualization  
+- ✅ **Performance Metrics**: KPIs และ performance indicators
+- ✅ **Export Reports**: ส่งออกรายงานในรูปแบบต่างๆ
+
+#### ใช้เทคโนโลยี:
+- **Frontend**: React Chart libraries (Chart.js, D3.js), CSS Grid/Flexbox
+- **Backend**: Data aggregation APIs, Report generation services
+- **Database**: MongoDB aggregation pipeline, MSSQL reporting queries
+
+---
+
+### ⚙️ Epic 5: System Administration & Configuration
+**เป้าหมาย**: จัดการระบบและ configuration สำหรับ IT administrators
+
+#### Features:
+- ✅ **Database Management**: จัดการการเชื่อมต่อและ configuration
+- ✅ **API Management**: จัดการ endpoints และ security settings
+- ✅ **User Management**: จัดการ user accounts และ permissions
+- ✅ **System Monitoring**: ติดตาม system health และ performance
+
+#### ใช้เทคโนโลยี:
+- **Frontend**: Admin panels, Configuration forms
+- **Backend**: Admin APIs, System monitoring endpoints
+- **Database**: Connection pooling, Database optimization
+
+---
+
+## 🚀 การเตรียมความพร้อม
+
+### 📚 ความรู้พื้นฐานที่ต้องมี
+
+#### Programming Fundamentals
+- [ ] **JavaScript ES6+**: Arrow functions, Promises, async/await, Modules
+- [ ] **HTML/CSS**: Semantic HTML, CSS Grid/Flexbox, Responsive design
+- [ ] **Basic SQL**: SELECT, INSERT, UPDATE, DELETE, JOINs
+- [ ] **JSON**: Data format understanding และการใช้งาน
+
+#### Web Development Concepts  
+- [ ] **Client-Server Architecture**: การสื่อสารระหว่าง frontend และ backend
+- [ ] **REST APIs**: HTTP methods, Status codes, Request/Response
+- [ ] **Database Concepts**: Relational vs NoSQL, CRUD operations
+- [ ] **Version Control**: Git basics (clone, commit, push, pull, branch)
+
+### 🛠️ Development Environment Setup
+
+#### Required Software Installation
+
+##### 1. **Node.js และ npm**
+```bash
+# Download and install from https://nodejs.org/
+# Verify installation
+node --version  # Should be v18+
+npm --version   # Should be v8+
+```
+
+##### 2. **Database Systems**
+```bash
+# MSSQL Server (Windows/Linux)
+# Download from: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
+# MongoDB Community Edition
+# Download from: https://www.mongodb.com/try/download/community
+```
+
+##### 3. **Development Tools**
+```bash
+# Visual Studio Code
+# Download from: https://code.visualstudio.com/
+
+# Git for version control  
+# Download from: https://git-scm.com/downloads
+
+# Postman for API testing
+# Download from: https://www.postman.com/downloads/
+```
+
+#### Recommended VS Code Extensions
+```json
+{
+  "recommendations": [
+    "ms-vscode.vscode-json",
+    "ms-vscode.vscode-typescript-next", 
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "ms-mssql.mssql",
+    "ms-vscode.vscode-node-debug2"
+  ]
+}
+```
+
+### 📖 เอกสารและ Resources ที่ต้องอ่าน
+
+#### Core Documentation
+- [ ] **React.js Official Docs**: https://reactjs.org/docs/
+- [ ] **Node.js Documentation**: https://nodejs.org/en/docs/
+- [ ] **Express.js Guide**: https://expressjs.com/en/guide/
+- [ ] **Electron.js Tutorial**: https://www.electronjs.org/docs/latest/
+
+#### Specific Technologies
+- [ ] **WebSocket API**: https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+- [ ] **JWT Introduction**: https://jwt.io/introduction/
+- [ ] **MSSQL Node.js**: https://docs.microsoft.com/en-us/sql/connect/node-js/
+- [ ] **MongoDB Node.js Driver**: https://docs.mongodb.com/drivers/node/
+
+### 🧪 Prerequisites Checklist
+
+#### Technical Skills Verification
+- [ ] สามารถสร้าง basic HTML page พร้อม CSS styling
+- [ ] เข้าใจการใช้ JavaScript functions และ objects
+- [ ] รู้วิธีการ query ข้อมูลจาก database ด้วย SQL
+- [ ] ใช้ Git สำหรับ version control ได้พื้นฐาน
+
+#### Environment Verification
+- [ ] สามารถรัน `npm install` และ `npm start` ได้สำเร็จ
+- [ ] เชื่อมต่อ database (MSSQL/MongoDB) ได้จาก local environment
+- [ ] สร้าง simple Express.js server ได้
+- [ ] Clone repository จาก GitHub และ make changes ได้
+
+---
+
+## 📅 แผนการพัฒนา
+
+### 🗓️ Timeline Overview (8 สัปดาห์)
+
+```
+Week 1-2: Foundation & Setup
+Week 3-4: Core Development  
+Week 5-6: Integration & Testing
+Week 7-8: Finalization & Presentation
+```
+
+### Sprint Breakdown
+
+#### **📚 Sprint 0: Project Setup (Week 1)**
+**Theme**: "เตรียมความพร้อมและวางรากฐาน"
+
+##### Learning Objectives:
+- ทำความเข้าใจ project requirements และ architecture
+- ตั้งค่า development environment
+- เรียนรู้ tools และ technologies ที่จะใช้
+
+##### Deliverables:
+- [ ] **Environment Setup**: Development environment พร้อมใช้งาน
+- [ ] **Project Structure**: Repository structure และ initial codebase
+- [ ] **Documentation Review**: อ่านและทำความเข้าใจ requirements
+- [ ] **Team Formation**: กำหนดบทบาทและความรับผิดชอบ
+
+##### Technical Tasks:
+```bash
+# 1. Clone starter repository
+git clone [repository-url]
+cd agent-wallboard-system
+
+# 2. Install dependencies
+npm install
+
+# 3. Setup databases
+# - Create MSSQL database instance
+# - Create MongoDB database instance
+# - Verify connections
+
+# 4. Run initial application
+npm run dev
 ```
 
 ---
 
-## 👥 **Team Structure & Roles**
+#### **🏗️ Sprint 1: Foundation (Week 2)**
+**Theme**: "Database และ API Foundation"
 
-### **Team Size**: 4-5 members per team
+##### Focus Areas:
+- **Epic 5**: System Administration & Configuration
+- **Epic 3**: Agent Authentication
 
-### **Required Roles**
-1. **🎯 Project Manager / Product Owner**
-   - Requirements gathering and project coordination
-   - Timeline management and team communication
-   - User story creation and acceptance criteria
+##### Learning Objectives:
+- Database design และ implementation
+- RESTful API development
+- Authentication mechanisms
 
-2. **🎨 Frontend Developer / UI-UX Designer**
-   - React.js development and component architecture
-   - User interface design and user experience
-   - Responsive design and accessibility
+##### Deliverables:
+- [ ] **Database Schema**: MSSQL tables และ MongoDB collections
+- [ ] **API Endpoints**: Authentication และ basic CRUD APIs
+- [ ] **Connection Management**: Database connection pooling
+- [ ] **Basic Testing**: Unit tests สำหรับ core functions
 
-3. **⚙️ Backend Developer / API Architect**
-   - Express.js API development
-   - Database design and implementation
-   - Authentication and security implementation
-
-4. **🗄️ Database Administrator / DevOps Engineer**
-   - MongoDB schema design and optimization
-   - Deployment and CI/CD setup
-   - Performance monitoring and optimization
-
-5. **🧪 Quality Assurance / Testing Specialist** (for 5-member teams)
-   - Test strategy and implementation
-   - Quality assurance and bug tracking
-   - Documentation and user manual creation
-
-### **Team Formation Process**
-```
-Week 13: Team formation and project selection
-- Students submit preferred teammates and project categories
-- Instructors finalize teams ensuring skill diversity
-- Teams submit project proposal (1-page)
-
-Week 14-15: Development sprints
-- Sprint 1 (Week 14): Core functionality development
-- Sprint 2 (Week 15): Advanced features and polish
-
-Week 16: Presentation and evaluation
-```
+##### User Stories:
+- US-010: Database Management
+- US-011: API Management  
+- US-006: Agent Authentication
 
 ---
 
-## 📊 **Assessment Criteria & Detailed Rubric**
+#### **⚡ Sprint 2: Core Features (Week 3-4)**
+**Theme**: "Real-time Features และ Communication"
 
-### **CLO Mapping**
-| CLO | Description | Assessment Component | Weight |
-|-----|-------------|---------------------|---------|
-| **CLO1** | อธิบายหลักการ Frontend/Backend architecture | System architecture documentation | 10% |
-| **CLO2** | พัฒนาแอปพลิเคชัน Full-stack ด้วยเทคโนโลยีสมัยใหม่ | Technical implementation | 40% |
-| **CLO3** | สร้าง Cross-platform applications | Application functionality | 15% |
-| **CLO4** | ออกแบบ User Interface ที่ตอบสนอง | UI/UX design and implementation | 15% |
-| **CLO5** | ประยุกต์ใช้เทคนิคการทดสอบและเครื่องมือพัฒนา | Testing and development practices | 10% |
-| **CLO6** | ใช้ระบบควบคุมเวอร์ชันและ collaboration | Team collaboration and Git workflow | 10% |
+##### Focus Areas:
+- **Epic 1**: Real-time Agent Status Monitoring
+- **Epic 2**: Supervisor Communication System
 
-### **Comprehensive Rubric (100 points total)**
+##### Learning Objectives:
+- WebSocket implementation
+- Real-time data synchronization
+- Event-driven programming
 
-#### **🏗️ Technical Implementation (40 points)**
+##### Deliverables:
+- [ ] **WebSocket Server**: Real-time communication infrastructure
+- [ ] **Agent Status Management**: Status tracking และ updates
+- [ ] **Message System**: Supervisor-to-agent messaging
+- [ ] **Desktop Notifications**: Agent notification system
 
-| Criteria | Excellent (36-40) | Good (32-35) | Satisfactory (28-31) | Needs Improvement (0-27) |
-|----------|-------------------|--------------|----------------------|---------------------------|
-| **Architecture Design** | Well-structured, scalable architecture with clear separation of concerns | Good architecture with minor structural issues | Basic architecture that works but could be improved | Poor or confusing architecture |
-| **Frontend Development** | Advanced React patterns, excellent state management, optimized performance | Good React implementation with proper hooks usage | Basic React functionality working correctly | Limited React features or poor implementation |
-| **Backend Development** | Robust API design, comprehensive error handling, security best practices | Well-implemented API with good error handling | Functional API with basic error handling | Limited API functionality or poor error handling |
-| **Database Design** | Efficient schema design, proper indexing, optimized queries | Good database structure with some optimization | Basic database functionality working | Poor database design or implementation |
-| **Integration Quality** | Seamless full-stack integration, efficient data flow | Good integration with minor sync issues | Basic integration working with some delays | Poor integration or frequent failures |
-
-#### **🎨 User Experience & Design (20 points)**
-
-| Criteria | Excellent (18-20) | Good (16-17) | Satisfactory (14-15) | Needs Improvement (0-13) |
-|----------|-------------------|--------------|----------------------|---------------------------|
-| **UI Design Quality** | Professional, modern, consistent design following design principles | Good design with minor inconsistencies | Acceptable design that serves its purpose | Poor design that hinders usability |
-| **User Experience** | Intuitive navigation, smooth user flows, excellent usability | Good UX with clear navigation and minimal friction | Basic UX that allows users to complete tasks | Confusing or frustrating user experience |
-| **Responsive Design** | Perfect responsiveness across all devices and screen sizes | Good responsive design with minor issues | Basic responsive features working | Poor or no responsive design |
-| **Accessibility** | WCAG compliant, keyboard navigation, screen reader support | Good accessibility features implemented | Basic accessibility considerations | Limited or no accessibility features |
-
-#### **💡 Innovation & Problem Solving (15 points)**
-
-| Criteria | Excellent (14-15) | Good (12-13) | Satisfactory (10-11) | Needs Improvement (0-9) |
-|----------|-------------------|--------------|----------------------|---------------------------|
-| **Problem Definition** | Clear, well-researched problem with validated user needs | Good problem identification with some validation | Basic problem statement that makes sense | Unclear or poorly defined problem |
-| **Solution Innovation** | Creative, innovative solution with unique features | Good solution with some innovative elements | Standard solution that solves the problem | Limited innovation or generic solution |
-| **Technical Challenges** | Successfully tackles complex technical challenges | Handles moderate technical complexity well | Addresses basic technical requirements | Avoids technical challenges or poor execution |
-| **Feature Completeness** | All planned features implemented plus extras | Most features implemented with good quality | Core features working as expected | Missing key features or poor implementation |
-
-#### **🔧 Development Practices (15 points)**
-
-| Criteria | Excellent (14-15) | Good (12-13) | Satisfactory (10-11) | Needs Improvement (0-9) |
-|----------|-------------------|--------------|----------------------|---------------------------|
-| **Code Quality** | Clean, maintainable code following best practices | Good code structure with proper organization | Readable code with basic organization | Poor code quality or organization |
-| **Testing Implementation** | Comprehensive test suite with high coverage | Good testing with decent coverage | Basic testing implemented | Limited or no testing |
-| **Documentation** | Excellent documentation including API docs, README, and code comments | Good documentation covering most aspects | Basic documentation with setup instructions | Poor or missing documentation |
-| **Version Control** | Excellent Git workflow with meaningful commits and branching | Good Git practices with regular commits | Basic Git usage with clear history | Poor Git practices or unclear history |
-
-#### **🤝 Team Collaboration (10 points)**
-
-| Criteria | Excellent (9-10) | Good (8) | Satisfactory (6-7) | Needs Improvement (0-5) |
-|----------|------------------|----------|-------------------|-------------------------|
-| **Teamwork Quality** | Excellent collaboration, clear role distribution, effective communication | Good teamwork with clear roles and regular communication | Basic teamwork with some coordination | Poor teamwork or communication issues |
-| **Project Management** | Well-organized project with clear milestones and timeline management | Good project organization with mostly met deadlines | Basic project organization with some delays | Poor project management or missed deadlines |
-| **Individual Contributions** | All members contribute significantly and equally | Most members contribute well with minor variations | Some variation in contribution but all participate | Significant variation in contribution or non-participation |
-| **Conflict Resolution** | Team handles conflicts professionally and constructively | Minor conflicts resolved effectively | Some conflicts but team works through them | Unresolved conflicts affecting project quality |
+##### User Stories:
+- US-001: Agent Status Display
+- US-002: Agent Status Updates
+- US-004: Send Message to Agent
+- US-005: Receive Notifications
+- US-012: WebSocket Management
 
 ---
 
-## 📋 **Deliverables & Submission**
+#### **🎨 Sprint 3: User Interface (Week 5)**
+**Theme**: "Frontend Development และ User Experience"
 
-### **Required Deliverables**
+##### Focus Areas:
+- **Epic 3**: Agent Self-Service Portal
+- **Epic 4**: Management Dashboard
 
-#### **1. Source Code & Documentation (40%)**
-```
-📁 Final Project Repository Structure:
-├── 📄 README.md (Comprehensive project overview)
-├── 📄 ARCHITECTURE.md (System architecture documentation)
-├── 📄 API-DOCUMENTATION.md (Complete API reference)
-├── 📄 USER-MANUAL.md (End-user guide)
-├── 📄 DEVELOPMENT-GUIDE.md (Setup and development instructions)
-├── 📁 frontend/ (React.js application)
-├── 📁 backend/ (Node.js API server)
-├── 📁 database/ (MongoDB schemas and seed data)
-├── 📁 tests/ (Test suites and coverage reports)
-├── 📁 deployment/ (Deployment configurations)
-├── 📁 docs/ (Additional documentation and diagrams)
-└── 📁 presentation/ (Presentation materials)
-```
+##### Learning Objectives:
+- React.js component development
+- Electron.js desktop application
+- Responsive web design
 
-#### **2. Working Application (30%)**
-- 🌐 **Live Demo**: Deployed application accessible via URL
-- 📱 **Responsive Design**: Working on desktop, tablet, and mobile
-- 🔐 **User Accounts**: Registration and authentication system
-- 📊 **Data Management**: Full CRUD operations
-- ⚡ **Performance**: Fast loading and responsive interactions
+##### Deliverables:
+- [ ] **Desktop Application**: Electron.js app สำหรับ agents
+- [ ] **Web Dashboard**: React.js dashboard สำหรับ supervisors
+- [ ] **User Interface**: Responsive และ user-friendly design
+- [ ] **State Management**: Frontend state management
 
-#### **3. Presentation & Demo (20%)**
-- 🎤 **Team Presentation**: 20-minute presentation + 10-minute Q&A
-- 💻 **Live Demo**: Working demonstration of all features
-- 📊 **Technical Deep-dive**: Architecture and implementation details
-- 🎯 **Problem & Solution**: Clear problem statement and solution explanation
-
-#### **4. Individual Reflection (10%)**
-Each team member submits a 3-page individual reflection covering:
-- Personal contributions to the project
-- Technical challenges faced and solutions implemented
-- Learning outcomes and skill development
-- Team collaboration experience
-- Future improvements and scalability considerations
-
-### **Submission Timeline**
-```
-📅 Week 13 (Monday): Team formation and project proposal due
-📅 Week 14 (Friday): Sprint 1 demo and progress report
-📅 Week 15 (Friday): Final submission deadline (23:59)
-📅 Week 16 (Lab time): Final presentations and live demos
-📅 Week 16 (Friday): Individual reflection reports due
-```
+##### User Stories:
+- US-007: Agent Profile Information
+- US-008: Team Dashboard
+- US-009: Statistical Reports
 
 ---
 
-### **Final Project Schedule**
-```
-📅 Capstone Project Timeline:
+#### **🔧 Sprint 4: Integration & Testing (Week 6)**
+**Theme**: "Integration และ Quality Assurance"
 
-Week 13 (Monday):
-├── 👥 Team formation process begins
-├── 📋 Project category selection
-└── 🎯 Initial team meetings and role assignment
+##### Focus Areas:
+- System integration
+- Testing และ debugging
+- Performance optimization
 
-Week 13 (Wednesday):
-├── 📝 Project proposal submission (1-page)
-├── 🔍 Proposal review and approval process
-└── 🛠️ Development environment setup
+##### Learning Objectives:
+- Integration testing
+- Performance tuning
+- Debugging techniques
 
-Week 13 (Friday):
-├── ✅ Proposal approval and feedback
-├── 📊 Project planning and sprint organization
-└── 🎯 Sprint 1 goals and timeline establishment
+##### Deliverables:
+- [ ] **Full Integration**: ทุก components ทำงานร่วมกันได้
+- [ ] **Testing Suite**: Unit และ integration tests
+- [ ] **Performance Optimization**: Response time improvements
+- [ ] **Bug Fixes**: Critical issues resolution
 
-Week 14 (Sprint 1 - Core Development):
-├── Monday: Sprint 1 kickoff and task assignment
-├── Wednesday: Mid-sprint progress review
-├── Friday: Sprint 1 demo and retrospective
-
-Week 15 (Sprint 2 - Enhancement & Polish):
-├── Monday: Sprint 2 planning and advanced features
-├── Wednesday: Final integration and testing
-├── Friday: Final submission and presentation preparation
-
-Week 16 (Presentations & Evaluation):
-├── Monday-Wednesday: Final presentations (20 min each team)
-├── Thursday: Peer evaluation and awards ceremony
-└── Friday: Individual reflection submissions due
-```
+##### User Stories:
+- US-003: Login/Logout Tracking
+- US-013: Application Distribution
+- US-014: System Configuration
 
 ---
 
-## 🏆 **Bonus Opportunities**
+#### **🚀 Sprint 5: Finalization (Week 7-8)**
+**Theme**: "Production Readiness และ Documentation"
 
-### **Excellence Awards (Extra Credit)**
-- 🥇 **Best Innovation Award**: Most creative and innovative solution (+5 points)
-- 🎨 **Best Design Award**: Outstanding UI/UX design (+3 points)
-- 🔧 **Best Technical Implementation**: Superior technical execution (+3 points)
-- 🤝 **Best Teamwork Award**: Exemplary collaboration and communication (+2 points)
-- 🌟 **People's Choice Award**: Voted by peer teams (+2 points)
+##### Focus Areas:
+- Production deployment
+- Documentation
+- User training
+- Project presentation
 
-### **Industry Recognition Opportunities**
-- 📢 **Showcase Event**: Best projects presented to industry professionals
-- 💼 **Internship Opportunities**: Top teams may receive internship offers
-- 🏆 **Competition Entry**: Outstanding projects entered in national competitions
-- 📰 **Media Coverage**: Best projects featured in university publications
+##### Learning Objectives:
+- Deployment processes
+- Documentation writing
+- Presentation skills
 
----
-
-## 📞 **Support & Resources**
-
-### **Mentoring Support**
-- 👨‍🏫 **Faculty Mentors**: Weekly check-ins with assigned instructors
-- 👩‍💼 **Industry Mentors**: Guest mentors from software companies
-- 👥 **Peer Mentoring**: Cross-team collaboration and knowledge sharing
-
-### **Technical Resources**
-- 🔧 **Development Tools**: Free access to professional development tools
-- ☁️ **Cloud Credits**: AWS, MongoDB Atlas, and Vercel credits provided
-- 📚 **Learning Materials**: Curated resources and tutorials
-- 🎥 **Video Tutorials**: Recorded sessions on advanced topics
-
-### **Emergency Support**
-- 🚨 **Technical Helpdesk**: Available during project weeks
-- 📞 **Weekend Support**: Limited support for critical issues
-- 💬 **Discord Channel**: 24/7 peer support and discussion
+##### Deliverables:
+- [ ] **Production Deployment**: Working system ใน production environment
+- [ ] **User Documentation**: User manuals และ training materials
+- [ ] **Technical Documentation**: API documentation และ system architecture
+- [ ] **Project Presentation**: Final presentation พร้อม demo
 
 ---
 
-## 📈 **Success Metrics & Outcomes**
+## 👥 ทีมงานและบทบาท
 
-### **Expected Learning Outcomes**
-After completing both assessments, students will demonstrate:
+### 🎯 ขนาดทีมแนะนำ: 3-4 คน
 
-1. **Technical Proficiency**
-   - Full-stack development capabilities
-   - Modern JavaScript and React.js expertise
-   - API design and database management skills
-   - Testing and deployment knowledge
+### บทบาทหลัก
 
-2. **Professional Skills**
-   - Project management and teamwork
-   - Technical communication and documentation
-   - Problem-solving and critical thinking
-   - Code quality and best practices
+#### **🏗️ Full-Stack Developer (1-2 คน)**
+**Primary Responsibilities**:
+- Database design และ implementation  
+- RESTful API development
+- Frontend-backend integration
+- WebSocket implementation
 
-3. **Industry Readiness**
-   - Portfolio-quality projects for job applications
-   - Experience with professional development workflows
-   - Understanding of software development lifecycle
-   - Collaboration skills for team environments
+**Skills Required**:
+- JavaScript, Node.js, Express.js
+- React.js, HTML/CSS
+- Database (MSSQL, MongoDB)
+- Git version control
 
-### **Career Impact**
-- 💼 **Job Readiness**: Projects serve as portfolio pieces for job applications
-- 🎓 **Skill Certification**: Demonstrated competency in modern web development
-- 🌐 **Network Building**: Connections with industry mentors and peers
-- 🚀 **Entrepreneurship**: Foundation for startup ideas and business ventures
+**Learning Focus**:
+- API design patterns
+- Database optimization
+- Real-time programming
+- Security best practices
+
+#### **🎨 Frontend Specialist (1 คน)**  
+**Primary Responsibilities**:
+- User interface design และ development
+- Electron.js desktop application
+- React.js web dashboard
+- User experience optimization
+
+**Skills Required**:
+- React.js, HTML5, CSS3
+- JavaScript ES6+
+- Electron.js
+- UI/UX design principles
+
+**Learning Focus**:
+- Component-based architecture
+- State management
+- Responsive design
+- Desktop application development
+
+#### **📊 QA & Documentation Lead (1 คน)**
+**Primary Responsibilities**:
+- Testing strategy และ implementation
+- Documentation creation และ maintenance
+- User acceptance testing coordination
+- Project management support
+
+**Skills Required**:
+- Testing methodologies
+- Technical writing
+- Project coordination
+- Basic programming knowledge
+
+**Learning Focus**:
+- Software testing practices
+- Documentation standards
+- Quality assurance processes
+- Project management tools
+
+### 🤝 Collaboration Guidelines
+
+#### Daily Practices:
+- [ ] **Daily Standup** (15 นาที): Update progress, identify blockers
+- [ ] **Code Review**: ทุก pull request ต้องผ่าน review
+- [ ] **Documentation**: Update documentation เมื่อมี changes
+- [ ] **Testing**: Write tests สำหรับ new features
+
+#### Weekly Practices:
+- [ ] **Sprint Planning**: วางแผนงานสำหรับสัปดาห์ถัดไป
+- [ ] **Demo Session**: แสดงผลงานที่เสร็จสมบูรณ์
+- [ ] **Retrospective**: Review สิ่งที่ดีและที่ต้องปรับปรุง
+- [ ] **Knowledge Sharing**: แบ่งปันความรู้และเทคนิคใหม่ๆ
+
+#### Communication Channels:
+- **GitHub Issues**: Task tracking และ bug reports
+- **Discord/Slack**: Daily communication
+- **Google Drive**: Document sharing
+- **Zoom/Teams**: Weekly meetings
 
 ---
 
+## 📊 การประเมินผล
+
+### 🎯 เกณฑ์การประเมิน (100 คะแนน)
+
+#### **📋 Project Implementation (40 คะแนน)**
+- **Functionality**: ระบบทำงานได้ตาม requirements (15 คะแนน)
+- **Code Quality**: Code structure, comments, best practices (10 คะแนน)
+- **User Experience**: UI/UX design และ usability (10 คะแนน)
+- **Innovation**: Creative solutions และ additional features (5 คะแนน)
+
+#### **📚 Documentation (25 คะแนน)**
+- **Technical Documentation**: API docs, system architecture (10 คะแนน)
+- **User Documentation**: User manuals, installation guides (8 คะแนน)
+- **Project Documentation**: README, changelog, lessons learned (7 คะแนน)
+
+#### **🎤 Presentation (20 คะแนน)**
+- **Technical Presentation**: System demo และ technical explanation (12 คะแนน)
+- **Business Value**: Problem solving และ impact explanation (8 คะแนน)
+
+#### **👥 Teamwork (15 คะแนน)**
+- **Collaboration**: Git usage, code reviews, communication (8 คะแนน)
+- **Individual Contribution**: Personal contribution และ learning growth (7 คะแนน)
+
+### 🏆 Success Criteria
+
+#### **Minimum Requirements (ผ่าน 60%)**:
+- ✅ ระบบทำงานได้พื้นฐานตาม core features
+- ✅ Database connection และ basic CRUD operations
+- ✅ Simple user interface สำหรับ agents และ supervisors
+- ✅ Basic documentation และ setup instructions
+
+#### **Good Performance (70-80%)**:
+- ✅ Real-time features ทำงานได้เสถียร
+- ✅ User-friendly interface พร้อม responsive design  
+- ✅ Comprehensive testing และ error handling
+- ✅ Complete documentation และ user guides
+
+#### **Excellent Performance (80-90%)**:
+- ✅ Advanced features และ performance optimization
+- ✅ Professional-grade UI/UX design
+- ✅ Comprehensive testing coverage
+- ✅ Production-ready deployment
+
+#### **Outstanding Performance (90%+)**:
+- ✅ Innovation และ creative problem solving
+- ✅ Exceptional user experience และ design
+- ✅ Advanced technical implementation
+- ✅ Professional presentation และ business impact demonstration
+
+---
+
+## 📖 Resources และเอกสาร
+
+### 📚 Learning Materials
+
+#### **Official Documentation**
+- [React.js Documentation](https://reactjs.org/docs/) - Complete React guide
+- [Node.js Documentation](https://nodejs.org/en/docs/) - Server-side JavaScript
+- [Express.js Guide](https://expressjs.com/) - Web framework for Node.js
+- [Electron Documentation](https://www.electronjs.org/docs/) - Desktop app framework
+- [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) - Real-time communication
+
+#### **Database Resources**
+- [MSSQL Node.js Driver](https://docs.microsoft.com/en-us/sql/connect/node-js/) - Database connectivity
+- [MongoDB Node.js Driver](https://docs.mongodb.com/drivers/node/) - NoSQL database
+- [Mongoose Documentation](https://mongoosejs.com/docs/) - MongoDB object modeling
+
+#### **Additional Learning**
+- [JavaScript ES6+ Features](https://es6.io/) - Modern JavaScript
+- [Git Tutorial](https://learngitbranching.js.org/) - Version control
+- [JWT Introduction](https://jwt.io/introduction/) - Authentication
+- [RESTful API Design](https://restfulapi.net/) - API best practices
+
+### 🛠️ Development Tools
+
+#### **Essential Tools**
+- **IDE**: [Visual Studio Code](https://code.visualstudio.com/) พร้อม recommended extensions
+- **API Testing**: [Postman](https://www.postman.com/) สำหรับ API development และ testing
+- **Database Management**: [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/), [MongoDB Compass](https://www.mongodb.com/products/compass)
+- **Version Control**: [Git](https://git-scm.com/) + [GitHub](https://github.com/)
+
+#### **Optional Tools**
+- **Design**: [Draw.io](https://draw.io/) สำหรับ system diagrams
+- **Monitoring**: [Postman Monitor](https://monitor.getpostman.com/) สำหรับ API monitoring
+- **Deployment**: [Heroku](https://heroku.com/), [Netlify](https://netlify.com/) สำหรับติดตั้งเพื่อใช้งาน
+
+---
