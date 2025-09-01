@@ -1,4 +1,4 @@
-# ENGSE206: การกำหนดความต้องการและการออกแบบทางซอฟต์แวร์
+# ENGCE301: การกำหนดความต้องการและการออกแบบทางซอฟต์แวร์
 ## สัปดาห์ที่ 3: การเขียนเอกสารและการตรวจสอบความต้องการ
 *Software Requirements Specification and Design*
 
@@ -1196,4 +1196,4 @@ A: 1) ตรวจสอบว่า stakeholders เข้าใจ scope ช�
 - Office Hours: Tuesdays & Thursdays 2-4 PM
 - Course Forum: Available on LMS
 
-**Remember:** Great software starts with great requirements! 🚀# engse206-lab
+**Remember:** Great software starts with great requirements! 🚀# ENGCE301-lab

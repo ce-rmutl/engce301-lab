@@ -1,4 +1,4 @@
-# ENGSE206: Software Requirements Specification and Design
+# ENGCE301: Software Requirements Specification and Design
 ## สัปดาห์ที่ 3: การเขียนเอกสารความต้องการ (SRS) และ UML Modeling
 ### มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา (ดอยสะเก็ด)
 #### อาจารย์ประจำหลักสูตรวิศวกรรมซอฟต์แวร์ - ระดับปริญาตรี
@@ -8,7 +8,7 @@
 ## Slide 1: Course Information & Introduction
 ### รายละเอียดรายวิชา
 
-**รหัสวิชา:** ENGSE206  
+**รหัสวิชา:** ENGCE301  
 **ชื่อวิชา:** Software Requirements Specification and Design  
 **หน่วยกิต:** 3(3-0-6)  
 **ภาคการศึกษา:** 2/2567  
@@ -332,7 +332,7 @@ Target Audiences:
 • IEEE Std 830-1998 - IEEE Recommended Practice for Software Requirements Specifications
 • RFC 6455 - The WebSocket Protocol  
 • RFC 7519 - JSON Web Token (JWT)
-• ENGSE206 Course Materials - Software Requirements and Design
+• ENGCE301 Course Materials - Software Requirements and Design
 • Agent Wallboard System - Project Charter and Initial Requirements
 • Call Center Operations Manual - Business Process Documentation
 ```
