@@ -1,4 +1,4 @@
-# สัปดาห์ที่ 7: Backend Development with Node.js
+# สัปดาห์ที่ 5: Backend Development with Node.js
 ## ENGCE301 การออกแบบและพัฒนาซอฟต์แวร์
 ### Case Study: Agent Wallboard System
 
@@ -62,7 +62,7 @@ Phase 3: server.js + Auth + Deploy ← Production ready
            ↓
 สัปดาห์ที่ 6: Advanced React & State Management  
            ↓
-สัปดาห์ที่ 7: Backend Development with Node.js ← เรียนวันนี้
+สัปดาห์ที่ 5: Backend Development with Node.js ← เรียนวันนี้
            ↓
 สัปดาห์ที่ 8: Database Integration & MongoDB
 ```
