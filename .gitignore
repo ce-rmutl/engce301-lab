@@ -10,6 +10,7 @@ lerna-debug.log*
 
 engse611_2-67
 resources
+experiment
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
