@@ -1,6 +1,6 @@
 # UML Diagram การสอน
 ## Agent Wallboard Management System Case Study
-### ENGSE206: Software Requirements Specification and Design
+### ENGCE301: Software Design and Development Specification and Design
 ### มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา (ดอยสะเก็ด)
 
 ---

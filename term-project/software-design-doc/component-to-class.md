@@ -1,5 +1,5 @@
 # ตัวอย่างเปรียบเทียบ: จาก Component สู่ Class แบบง่ายๆ
-## ENGSE206: Software Requirements Specification and Design
+## ENGCE301: Software Design and Development Specification and Design
 ### สำหรับนักศึกษาที่เพิ่งเรียน Object-Oriented Programming
 
 ---

@@ -1,5 +1,5 @@
 # Agent Wallboard System - UML Diagrams Collection
-## สำหรับ C4 Model Design (C1-C4) | ENGSE206 - RMUTL
+## สำหรับ C4 Model Design (C1-C4) | ENGCE301 - RMUTL
 
 ---
 

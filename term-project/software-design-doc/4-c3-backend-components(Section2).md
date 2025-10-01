@@ -4,7 +4,7 @@
 **Document ID:** C3-AWS-BACKEND-001  
 **Version:** 1.0  
 **วันที่:** กันยายน 2025  
-**จัดทำโดย:** อาจารย์ ENGSE206 - RMUTL  
+**จัดทำโดย:** อาจารย์ ENGCE301 - RMUTL  
 
 ---
 

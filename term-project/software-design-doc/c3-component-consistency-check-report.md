@@ -4,7 +4,7 @@
 **Document ID:** C3-CONSISTENCY-001  
 **Version:** 1.0  
 **วันที่:** กันยายน 2025  
-**ตรวจสอบโดย:** อาจารย์ ENGSE206 - RMUTL
+**ตรวจสอบโดย:** อาจารย์ ENGCE301 - RMUTL
 
 ---
 
