@@ -1,0 +1,650 @@
+<!DOCTYPE html><html><head>
+      <title>lecture1 copy</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/thanitkeatkaew/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.20/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="สัปดาห์ที่-1--introduction-to-software-engineering--sdlc">สัปดาห์ที่ 1 – Introduction to Software Engineering &amp; SDLC </h1>
+<p><strong>รายวิชา:</strong> ENGCE301 – การออกแบบและพัฒนาซอฟต์แวร์ (Software Design and Development)<br>
+<strong>ชั่วโมงเรียน:</strong> 2 ชม. ทฤษฎี + 3 ชม. ปฏิบัติ<br>
+<strong>เชื่อมกับ CLO:</strong> CLO1, CLO4, CLO6</p>
+<hr>
+<h2 id="0-ภาพรวมและจุดประสงค์สัปดาห์ที่-1">0. ภาพรวมและจุดประสงค์สัปดาห์ที่ 1 </h2>
+<h3 id="01-หัวข้อประจําสัปดาห์">0.1 หัวข้อประจำสัปดาห์ </h3>
+<blockquote>
+<p><strong>Introduction to Software Engineering &amp; SDLC + Dev Environment Setup</strong><br>
+– บทบาท/หน้าที่ของวิศวกรซอฟต์แวร์<br>
+– วิวัฒนาการของซอฟต์แวร์<br>
+– SDLC: Waterfall vs Agile (Scrum, Kanban)<br>
+– แนะนำ Git, VSCode, Node.js, Browser DevTools</p>
+</blockquote>
+<h3 id="02-จุดประสงค์การเรียนรู้รายสัปดาห์-เมื่อจบสัปดาห์นี้-นศ-สามารถ">0.2 จุดประสงค์การเรียนรู้รายสัปดาห์ (เมื่อจบสัปดาห์นี้ นศ. สามารถ…) </h3>
+<ol>
+<li>
+<p><strong>CLO1:</strong></p>
+<ul>
+<li>อธิบายได้ว่า “วิศวกรรมซอฟต์แวร์” คืออะไร และต่างจาก “การเขียนโปรแกรมธรรมดา” อย่างไร</li>
+<li>อธิบายภาพรวม SDLC และบทบาทของกระบวนการพัฒนาในมุมมาตรฐาน (SWEBOK, ISO/IEC/IEEE 12207)</li>
+</ul>
+</li>
+<li>
+<p><strong>CLO1 (ต่อ) &amp; ความเข้าใจ Agile:</strong></p>
+<ul>
+<li>เปรียบเทียบ <strong>Waterfall vs Agile (Scrum/Kanban)</strong> ได้ทั้งมุมข้อดี–ข้อจำกัด</li>
+<li>ยกตัวอย่างว่ารูปแบบใดเหมาะกับโปรเจกต์ลักษณะไหน (รวมถึง Term Project ของวิชา)</li>
+</ul>
+</li>
+<li>
+<p><strong>CLO4:</strong></p>
+<ul>
+<li>ติดตั้งและตรวจสอบการทำงานของ <strong>Git, VS Code, Node.js, Browser DevTools</strong> บนเครื่องตนเอง</li>
+<li>สร้างโครงโปรเจกต์พื้นฐาน (โฟลเดอร์ + index.html + <a href="http://README.md">README.md</a>)</li>
+<li>Init Git repo และ push ขึ้น remote สำหรับ Term Project ได้อย่างถูกต้อง</li>
+</ul>
+</li>
+<li>
+<p><strong>CLO6:</strong></p>
+<ul>
+<li>ทำงานร่วมกันในกลุ่ม (3–4 คน) ในการตั้งค่า environment และจัดการ Git repository</li>
+<li>เริ่มสะท้อนบทบาทของตนเองในทีมพัฒนาซอฟต์แวร์ (อยากเป็น Dev / QA / DevOps / Architect ฯลฯ)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="1-บทนําวิศวกรรมซอฟต์แวร์-software-engineering">1. บทนำวิศวกรรมซอฟต์แวร์ (Software Engineering) </h2>
+<h3 id="11-ปัญหาที่ทําให้ต้องมี-วิศวกรรมซอฟต์แวร์">1.1 ปัญหาที่ทำให้ต้องมี “วิศวกรรมซอฟต์แวร์” </h3>
+<p>ประวัติศาสตร์ของซอฟต์แวร์เคยผ่านยุคที่เรียกว่า <strong>Software Crisis</strong>:</p>
+<ul>
+<li>โปรเจกต์ล้มเหลวจำนวนมาก – ส่งไม่ทัน ใช้งานไม่ได้ หรือเกินงบประมาณมาก</li>
+<li>ระบบซอฟต์แวร์ในโดเมนสำคัญ (การแพทย์ การบิน การเงิน) เกิดบั๊กจนเกิดความเสียหายใหญ่</li>
+<li>ขนาดและความซับซ้อนของระบบ <strong>ใหญ่เกินกว่าที่คนไม่กี่คนจะ “จำทั้งหมดในหัว” ได้</strong></li>
+</ul>
+<p><strong>คำตอบของอุตสาหกรรม:</strong></p>
+<blockquote>
+<p>ต้องเอา “ความเป็นวิศวกรรม” เข้ามาช่วย<br>
+= มีหลักการ/กระบวนการ/มาตรฐาน<br>
+ไม่ใช่อาศัยฝีมือโปรแกรมเมอร์คนเดียว</p>
+</blockquote>
+<h3 id="12-นิยามและขอบเขต-โยงมาตรฐาน-swebokieee">1.2 นิยามและขอบเขต (โยงมาตรฐาน SWEBOK/IEEE) </h3>
+<p>ในมุมของ IEEE / SWEBOK (Software Engineering Body of Knowledge):</p>
+<ul>
+<li>วิศวกรรมซอฟต์แวร์เป็น <strong>สาขาวิศวกรรม</strong> ที่ผสม
+<ul>
+<li><strong>ความรู้เชิงเทคนิค</strong> (requirements, design, construction, testing, maintenance ฯลฯ)</li>
+<li><strong>กระบวนการ</strong> (processes)</li>
+<li><strong>เครื่องมือ</strong> (tools)</li>
+<li><strong>การจัดการ</strong> (management, quality, configuration management)</li>
+</ul>
+</li>
+</ul>
+<p>SWEBOK แบ่ง “เนื้อหาหลัก” ที่วิศวกรซอฟต์แวร์ควรรู้เป็นหมวด เช่น</p>
+<ul>
+<li>Software Requirements</li>
+<li>Software Design</li>
+<li>Software Construction</li>
+<li>Software Testing</li>
+<li>Software Maintenance</li>
+<li>Software Configuration Management</li>
+<li>Software Engineering Process / Management ฯลฯ</li>
+</ul>
+<blockquote>
+<p>ในรายวิชา ENGCE301 เราจะสัมผัสหลายหมวดของ SWEBOK<br>
+โดยเฉพาะ Requirements, Design, Construction, Testing และ Configuration Management (ผ่าน Git)</p>
+</blockquote>
+<hr>
+<h3 id="13-programming-vs-software-engineering">1.3 Programming vs Software Engineering </h3>
+<h4 id="ตารางเปรียบเทียบ">ตารางเปรียบเทียบ </h4>
+<table>
+<thead>
+<tr>
+<th>มุมมอง</th>
+<th>Programming (เขียนโปรแกรม)</th>
+<th>Software Engineering (วิศวกรรมซอฟต์แวร์)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>โฟกัสหลัก</td>
+<td>ให้โค้ดรันผ่าน ได้ผลลัพธ์ถูกต้อง</td>
+<td>ให้ “ระบบซอฟต์แวร์” มีคุณภาพ ใช้งานได้จริงและดูแลต่อได้ยาว</td>
+</tr>
+<tr>
+<td>ขอบเขต</td>
+<td>ฟังก์ชัน/โปรแกรมเล็ก ๆ</td>
+<td>ระบบซับซ้อน มีหลายโมดูล หลายทีม หลายผู้มีส่วนได้ส่วนเสีย</td>
+</tr>
+<tr>
+<td>เวลา</td>
+<td>มองช่วงสั้น ๆ (ทำฟีเจอร์นี้ให้เสร็จเร็ว)</td>
+<td>มองทั้งวงจรชีวิต (เปลี่ยนแปลง ขยายระบบ บำรุงรักษา)</td>
+</tr>
+<tr>
+<td>สิ่งที่ต้องคิดเพิ่ม</td>
+<td>ไม่มากไปกว่าโค้ดและ algorithm</td>
+<td>requirement, design, testing, quality, security, documentation ฯลฯ</td>
+</tr>
+</tbody>
+</table>
+<h4 id="infographic-ascii">Infographic ASCII </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>┌───────────────────────────────────────────────┐
+│ Programmer View                               │
+│  - โค้ด = ทุกอย่าง                               │
+│  - งานสำเร็จ = โปรแกรมรันผ่าน                    │
+│  - สนใจโจทย์เฉพาะหน้า                           │
+└───────────────────────────────────────────────┘
+                    VS
+┌───────────────────────────────────────────────┐
+│ Software Engineer View                        │
+│  - ซอฟต์แวร์ = ระบบ + ผู้ใช้ + ทีม + องค์กร          │
+│  - งานสำเร็จ = ระบบมีคุณภาพ ใช้งานได้ยาว           │
+│  - สนใจทั้งการออกแบบ, ทดสอบ, ดูแล, ขยายต่อ        │
+└───────────────────────────────────────────────┘
+</code></pre><hr>
+<h2 id="2-บทบาทในทีมซอฟต์แวร์และทักษะที่ต้องมี">2. บทบาทในทีมซอฟต์แวร์และทักษะที่ต้องมี </h2>
+<h3 id="21-บทบาทหลักในทีมยุคใหม่">2.1 บทบาทหลักในทีมยุคใหม่ </h3>
+<p>ใน Term Project ของวิชานี้ นศ. จะลอง “สวมหมวกหลายใบ” ของบทบาทเหล่านี้:</p>
+<ul>
+<li>
+<p><strong>Software Developer / Software Engineer</strong></p>
+<ul>
+<li>เขียนโค้ด, ทดสอบเบื้องต้น, แก้บั๊ก, refactor</li>
+</ul>
+</li>
+<li>
+<p><strong>Requirements Engineer / Business Analyst (BA)</strong></p>
+<ul>
+<li>คุยกับ “ลูกค้า/ผู้ใช้” (จำลอง)</li>
+<li>แปลงความต้องการเป็น use case / user story / SRS ย่อ</li>
+</ul>
+</li>
+<li>
+<p><strong>Software Architect (ระดับเบื้องต้น)</strong></p>
+<ul>
+<li>คิดโครงสร้างระบบ (frontend–backend–DB), API คร่าว ๆ</li>
+</ul>
+</li>
+<li>
+<p><strong>QA Engineer / Tester</strong></p>
+<ul>
+<li>ช่วยออกแบบ test case</li>
+<li>ทดสอบฟีเจอร์ที่กลุ่มพัฒนา</li>
+</ul>
+</li>
+<li>
+<p><strong>DevOps (เบื้องต้น)</strong></p>
+<ul>
+<li>ดูเรื่องการรันระบบในเครื่อง dev / demo</li>
+<li>ตั้งค่า script, npm command ต่าง ๆ</li>
+</ul>
+</li>
+</ul>
+<h4 id="infographic-value-chain-บทบาทในทีม">Infographic: Value Chain บทบาทในทีม </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code> Idea / Problem
+        │
+        ▼
++---------------------------+
+| Product Owner / BA        |  (นิยามความต้องการ)
++---------------------------+
+        │
+        ▼
++---------------------------+
+| Architect / Tech Lead     |  (ออกแบบสถาปัตยกรรม)
++---------------------------+
+        │
+        ▼
++---------------------------+
+| Dev + QA + Tester         |  (สร้างและทดสอบระบบ)
++---------------------------+
+        │
+        ▼
++---------------------------+
+| DevOps / SRE              |  (ดูแลระบบใช้งานจริง)
++---------------------------+
+        │
+        ▼
+      Users
+</code></pre><h3 id="22-ทักษะ-hard--soft-ที่สําคัญ">2.2 ทักษะ Hard / Soft ที่สำคัญ </h3>
+<p><strong>Hard Skills</strong></p>
+<ul>
+<li>Programming (JS/TS, HTML/CSS, Node.js, React)</li>
+<li>Basic Software Design &amp; Architecture</li>
+<li>Web fundamentals (HTTP, REST API)</li>
+<li>Database (SQL/NoSQL ขั้นพื้นฐาน)</li>
+<li>Version Control (Git &amp; branching workflow)</li>
+<li>Testing basics (unit test, manual test, integration test)</li>
+</ul>
+<p><strong>Soft Skills</strong></p>
+<ul>
+<li>การสื่อสาร (ขอ requirement ให้ชัด, รายงานปัญหา, ทำงานกับเพื่อน)</li>
+<li>ทีมเวิร์ก (แบ่งงาน, trust, code review)</li>
+<li>Time management (แบ่งงานเป็นชิ้นเล็ก ๆ, ตั้ง deadline)</li>
+<li>การเรียนรู้ด้วยตัวเอง (อ่าน docs/มาตรฐาน, ทดลองใช้เครื่องมือใหม่)</li>
+</ul>
+<blockquote>
+<p>กิจกรรมที่แนะนำ: ให้ นศ. เลือก “บทบาทที่อยากเป็นในอีก 3–5 ปี” และเขียน reflection สั้น ๆ<br>
+ว่าต้องพัฒนาทักษะอะไรบ้างในช่วงที่เรียนมหาวิทยาลัย</p>
+</blockquote>
+<hr>
+<h2 id="3-วิวัฒนาการของซอฟต์แวร์และกระบวนการพัฒนา">3. วิวัฒนาการของซอฟต์แวร์และกระบวนการพัฒนา </h2>
+<h3 id="31-เส้นเวลาพัฒนาการ-timeline">3.1 เส้นเวลาพัฒนาการ (Timeline) </h3>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>1970s  - Mainframe, Batch jobs
+        - โมเดล Waterfall เริ่มถูกใช้ในโปรเจกต์ใหญ่
+
+1980s  - PC, ระบบ Desktop
+        - แนวคิด Structured Analysis/Design
+
+1990s  - Client-Server, Web ยุคแรก
+        - UML, RUP, iterative models
+
+2000s  - Web 2.0, Mobile, SaaS
+        - Agile Manifesto (2001), Scrum, XP, Kanban
+
+2010s  - Cloud, DevOps, Microservices
+        - CI/CD, Continuous Delivery, Infrastructure as Code
+
+2020s  - Cloud-native, Data-intensive, AI-based systems
+        - DevSecOps, MLOps, data-intensive architecture
+</code></pre><h3 id="32-ผลต่อวิธีคิดของวิศวกรซอฟต์แวร์">3.2 ผลต่อวิธีคิดของวิศวกรซอฟต์แวร์ </h3>
+<ol>
+<li>
+<p><strong>ผู้ใช้เพิ่มขึ้นมหาศาล</strong></p>
+<ul>
+<li>ต้องคิดเรื่อง scalability และ reliability ตั้งแต่เริ่ม</li>
+</ul>
+</li>
+<li>
+<p><strong>การเปลี่ยนแปลงบ่อยเป็นเรื่องปกติ</strong></p>
+<ul>
+<li>ต้องมี process ที่รับมือกับการเปลี่ยน requirement อย่าง Agile</li>
+</ul>
+</li>
+<li>
+<p><strong>ระบบกลายเป็น network ของระบบย่อย</strong></p>
+<ul>
+<li>ต้องคิดเชิงสถาปัตยกรรม (architecture) มากขึ้น</li>
+<li>ต้องมี testing ในหลายระดับ (unit, integration, system, E2E)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>สัปดาห์นี้ให้นักศึกษาลองมองว่า Term Project ของเรา “อยู่ในยุคไหน” และควรใช้แนวคิด Waterfall/Agile แบบใดให้เหมาะ</p>
+</blockquote>
+<hr>
+<h2 id="4-sdlc-และมาตรฐานสากล-isoiecieee-swebok-acmieee">4. SDLC และมาตรฐานสากล (ISO/IEC/IEEE, SWEBOK, ACM/IEEE) </h2>
+<h3 id="41-sdlc-software-development-life-cycle">4.1 SDLC: Software Development Life Cycle </h3>
+<p><strong>คำจำกัดความ (ในวิชา)</strong></p>
+<blockquote>
+<p>SDLC คือ กรอบขั้นตอน/ช่วงเวลาที่ใช้จัดระเบียบการพัฒนาซอฟต์แวร์<br>
+ตั้งแต่คิดไอเดีย → เก็บ requirement → ออกแบบ → พัฒนา → ทดสอบ → นำไปใช้ → บำรุงรักษา</p>
+</blockquote>
+<p>เวอร์ชันพื้นฐาน:</p>
+<ol>
+<li>Requirements</li>
+<li>Design</li>
+<li>Implementation</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Maintenance</li>
+</ol>
+<h4 id="infographic-ascii-1">Infographic ASCII </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>[Requirements]
+      ↓
+[Design]
+      ↓
+[Implementation]
+      ↓
+[Testing]
+      ↓
+[Deployment]
+      ↓
+[Maintenance] ↺ (วนกลับเมื่อมี feature ใหม่ / แก้บั๊ก)
+</code></pre><h3 id="42-มาตรฐาน-isoiecieee-12207-life-cycle-processes">4.2 มาตรฐาน ISO/IEC/IEEE 12207 (Life Cycle Processes) </h3>
+<ul>
+<li>
+<p>เป็นมาตรฐานที่นิยาม “ชุดของกระบวนการ” ในวงจรชีวิตซอฟต์แวร์ เช่น</p>
+<ul>
+<li>Acquisition, Supply, Development, Operation, Maintenance</li>
+<li>Processes ทางองค์กร เช่น Management, Improvement</li>
+</ul>
+</li>
+<li>
+<p>มอง software development เป็น <strong>ชุด process</strong> มากกว่าแค่ “เขียนโค้ดตามขั้น”</p>
+</li>
+</ul>
+<blockquote>
+<p>ในวิชานี้เราไม่ลงรายละเอียดมาตรฐานทั้งหมด<br>
+แต่ให้นักศึกษารู้จักชื่อและแนวคิดว่า<br>
+“มีมาตรฐานระดับสากลคอยเป็นกรอบให้กระบวนการพัฒนา”</p>
+</blockquote>
+<h3 id="43-swebok-และแนวทางหลักสูตร-acmieee">4.3 SWEBOK และแนวทางหลักสูตร ACM/IEEE </h3>
+<ul>
+<li>
+<p><strong>SWEBOK</strong> = Body of Knowledge ด้านวิศวกรรมซอฟต์แวร์</p>
+<ul>
+<li>ใช้กำหนดว่าคนที่เรียกตัวเองว่า “Software Engineer” ควรรู้อะไรบ้าง</li>
+</ul>
+</li>
+<li>
+<p><strong>ACM/IEEE SE Curriculum (เช่น SE2014)</strong></p>
+<ul>
+<li>เป็น guideline สำหรับออกแบบหลักสูตร SE ระดับมหาวิทยาลัย</li>
+<li>ENGCE301 ก็อิงแนวคิดเดียวกัน: ให้ นศ. ได้สัมผัสทั้ง requirements, design, construction, testing และ project-based learning</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>สามารถแทรกรูป infographic จากอินเทอร์เน็ต เช่น</p>
+<ul>
+<li>แผนภาพ SWEBOK Knowledge Areas</li>
+<li>แผนผัง ISO/IEC/IEEE 12207 Life Cycle</li>
+<li>แผนภาพสรุป ACM/IEEE SE Curriculum map</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="5-โมเดล-waterfall">5. โมเดล Waterfall </h2>
+<h3 id="51-ภาพรวม">5.1 ภาพรวม </h3>
+<ul>
+<li>ทำงานเรียงเป็นลำดับขั้น: Requirement → Design → Implementation → Testing → Deployment → Maintenance</li>
+<li>เหมาะกับโครงการที่ Requirement ค่อนข้างนิ่ง</li>
+<li>เน้นเอกสารและขั้นตอนที่ชัดเจน</li>
+</ul>
+<h4 id="infographic-ascii--waterfall">Infographic ASCII – Waterfall </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Requirements
+    ↓
+System &amp; Software Design
+    ↓
+Implementation &amp; Unit Testing
+    ↓
+Integration &amp; System Testing
+    ↓
+Deployment &amp; Maintenance
+</code></pre><h3 id="52-รายละเอียดแต่ละเฟส">5.2 รายละเอียดแต่ละเฟส </h3>
+<ol>
+<li>
+<p><strong>Requirements</strong></p>
+<ul>
+<li>เก็บและวิเคราะห์ความต้องการของผู้ใช้/ลูกค้า</li>
+<li>ส่งมอบเป็น SRS</li>
+</ul>
+</li>
+<li>
+<p><strong>Design</strong></p>
+<ul>
+<li>แบ่งระบบเป็น module</li>
+<li>ออกแบบ DB, API, UI</li>
+</ul>
+</li>
+<li>
+<p><strong>Implementation &amp; Unit Testing</strong></p>
+<ul>
+<li>เขียนโค้ดตาม design</li>
+<li>ทดสอบหน่วยย่อยให้ทำงานถูกต้อง</li>
+</ul>
+</li>
+<li>
+<p><strong>Integration &amp; System Testing</strong></p>
+<ul>
+<li>ทดสอบการทำงานร่วมกันของ module</li>
+<li>ทดสอบฟังก์ชันตาม scenario จริง</li>
+</ul>
+</li>
+<li>
+<p><strong>Deployment &amp; Maintenance</strong></p>
+<ul>
+<li>นำระบบให้ผู้ใช้ใช้งานจริง</li>
+<li>แก้บั๊ก และปรับปรุงในระยะยาว</li>
+</ul>
+</li>
+</ol>
+<h3 id="53-จุดแข็งจุดอ่อน">5.3 จุดแข็ง–จุดอ่อน </h3>
+<p><strong>จุดแข็ง</strong></p>
+<ul>
+<li>เหมาะสำหรับระบบที่ requirement ชัดและไม่เปลี่ยน</li>
+<li>เอกสารครบ ตรวจสอบย้อนหลังได้ง่าย</li>
+<li>เหมาะกับองค์กรที่ต้อง audit/มาตรฐานเข้ม</li>
+</ul>
+<p><strong>จุดอ่อน</strong></p>
+<ul>
+<li>ผู้ใช้มักเห็น product จริงตอนท้าย → ถ้าไม่ตรงใจ แก้ลำบาก</li>
+<li>ไม่ยืดหยุ่นต่อการเปลี่ยน requirement ระหว่างทาง</li>
+<li>Feedback cycle ยาว</li>
+</ul>
+<hr>
+<h2 id="6-agile-scrum-kanban">6. Agile, Scrum, Kanban </h2>
+<h3 id="61-agile-mindset">6.1 Agile Mindset </h3>
+<p>Agile เน้น:</p>
+<ol>
+<li>Individuals &amp; Interactions &gt; Processes &amp; Tools</li>
+<li>Working Software &gt; Comprehensive Documentation</li>
+<li>Customer Collaboration &gt; Contract Negotiation</li>
+<li>Responding to Change &gt; Following a Plan</li>
+</ol>
+<p><strong>ตีความสำหรับนักศึกษา:</strong></p>
+<ul>
+<li>ต้องสื่อสารในทีมให้เยอะ–ถี่ (ไม่เงียบแล้วทำคนเดียว)</li>
+<li>ส่งมอบงานทีละชิ้นเล็ก ๆ ดู feedback เรื่อย ๆ</li>
+<li>เอกสารยังจำเป็น แต่ “พอเหมาะ” ไม่ใช่เขียนแต่เอกสารจนไม่มีเวลาเขียนโค้ด</li>
+</ul>
+<hr>
+<h3 id="62-scrum--วงรอบการทํางานแบบ-sprint">6.2 Scrum – วงรอบการทำงานแบบ Sprint </h3>
+<h4 id="roles">Roles </h4>
+<ul>
+<li><strong>Product Owner</strong> – กำหนด vision และลำดับความสำคัญของงาน</li>
+<li><strong>Scrum Master</strong> – ช่วยทีมทำงานตาม Scrum และแก้ impediments</li>
+<li><strong>Developers</strong> – ทีมลงมือทำงานจริง</li>
+</ul>
+<h4 id="events">Events </h4>
+<ul>
+<li><strong>Sprint (1–4 สัปดาห์)</strong></li>
+<li><strong>Sprint Planning</strong> – เลือกงานที่จะทำใน Sprint</li>
+<li><strong>Daily Scrum</strong> – คุยสั้น ๆ 15 นาที ทุกวัน</li>
+<li><strong>Sprint Review</strong> – Demo งานให้ PO/ผู้มีส่วนได้ส่วนเสียดู</li>
+<li><strong>Sprint Retrospective</strong> – คุยกันว่ารอบที่ผ่านมาอะไรดี/ไม่ดี และจะปรับปรุงอย่างไร</li>
+</ul>
+<h4 id="artifacts">Artifacts </h4>
+<ul>
+<li>Product Backlog</li>
+<li>Sprint Backlog</li>
+<li>Increment (เวอร์ชันของระบบที่ใช้งานได้จริง ณ สิ้น Sprint)</li>
+</ul>
+<h4 id="infographic-ascii--scrum-cycle">Infographic ASCII – Scrum Cycle </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Product Backlog
+      │
+      ▼  (Sprint Planning)
+Sprint Backlog ──► Sprint (1-2 weeks) ──► Increment
+                          │
+                          ▼
+                    Daily Scrum
+                          │
+               +----------+----------+
+               | Sprint Review       |
+               | Sprint Retrospective|
+               +---------------------+
+</code></pre><hr>
+<h3 id="63-kanban--จัดการ-flow-ของงาน">6.3 Kanban – จัดการ Flow ของงาน </h3>
+<p>แนวคิดสำคัญ:</p>
+<ul>
+<li>Visualize work – มองเห็นงานทั้งหมด</li>
+<li>Limit WIP – จำกัดจำนวนงาน “กำลังทำ”</li>
+<li>Manage Flow – ลดการติดค้างกลางทาง</li>
+</ul>
+<h4 id="ascii--ตัวอย่าง-kanban-board">ASCII – ตัวอย่าง Kanban Board </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>┌─────────┬─────────┬─────────┬─────────┐
+│ Backlog │  To Do  │  Doing  │  Done   │
+├─────────┼─────────┼─────────┼─────────┤
+│ Feat A  │ Feat B  │ Bug #1  │ Hotfix  │
+│ Feat C  │ Bug #2  │         │         │
+└─────────┴─────────┴─────────┴─────────┘
+</code></pre><p>ใน Term Project ของวิชา แนะนำให้แต่ละกลุ่มใช้ Kanban (บนกระดาษหรือออนไลน์) เพื่อ track งาน ตั้งแต่ Week 1</p>
+<hr>
+<h2 id="7-เปรียบเทียบ-waterfall-vs-agile-และการประยุกต์ใช้ใน-engce301">7. เปรียบเทียบ Waterfall vs Agile และการประยุกต์ใช้ใน ENGCE301 </h2>
+<h3 id="71-ตารางเปรียบเทียบ">7.1 ตารางเปรียบเทียบ </h3>
+<table>
+<thead>
+<tr>
+<th>มิติ</th>
+<th>Waterfall</th>
+<th>Agile (Scrum/Kanban)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>การวางแผน</td>
+<td>แผนใหญ่ครั้งเดียวทั้งโปรเจกต์</td>
+<td>แผนเป็นรอบสั้น ๆ (Sprint/Iteration)</td>
+</tr>
+<tr>
+<td>การส่งมอบ</td>
+<td>ส่งทีเดียวตอนท้าย</td>
+<td>ส่ง incremental features บ่อย ๆ</td>
+</tr>
+<tr>
+<td>การเปลี่ยนแปลง</td>
+<td>ต้นทุนสูง</td>
+<td>ถือเป็นเรื่องปกติ จัดการในแต่ละ Sprint</td>
+</tr>
+<tr>
+<td>เอกสาร</td>
+<td>หนักเอกสาร</td>
+<td>เอกสารเท่าที่จำเป็น</td>
+</tr>
+<tr>
+<td>ความเสี่ยง</td>
+<td>รู้ตอนท้าย (ถ้าผิดจะเจ็บหนัก)</td>
+<td>รู้เร็วจาก feedback แต่ละรอบ</td>
+</tr>
+<tr>
+<td>เหมาะกับ</td>
+<td>ระบบที่ต้อง spec ชัด/คงที่</td>
+<td>Product ที่ต้องทดลอง–เรียนรู้ตลาดรวดเร็ว</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-hybrid-model-สําหรับวิชานี้">7.2 Hybrid Model สำหรับวิชานี้ </h3>
+<p>สำหรับ ENGCE301:</p>
+<ul>
+<li>
+<p>ระดับ “เทอม” ใช้โครงแบบ <strong>Stage (คล้าย Waterfall)</strong></p>
+<ul>
+<li>ช่วงต้นเทอม: Requirements &amp; Design</li>
+<li>กลางเทอม: Implementation &amp; Testing</li>
+<li>ปลายเทอม: Deployment &amp; Presentation</li>
+</ul>
+</li>
+<li>
+<p>ระดับ “งานรายสัปดาห์” ใช้แนวคิด <strong>Agile</strong></p>
+<ul>
+<li>แบ่งงานเป็น user story / task</li>
+<li>ใช้ Kanban board / Mini Sprint 1–2 สัปดาห์</li>
+</ul>
+</li>
+</ul>
+<h4 id="ascii--roadmap-วิชา-ตัวอย่าง">ASCII – Roadmap วิชา (ตัวอย่าง) </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>Week 1   Intro SE + SDLC + Tools
+Week 2-4 Requirements + HTML/CSS
+Week 5-7 JS + Node/Express + DB
+Week 8   Midterm
+Week 9-12 React + API + MongoDB + Testing
+Week 13-15 Quality + Refactor + Deployment
+Week 16  Term Project Presentation
+Week 17  Final Exam
+</code></pre><hr>
+<h2 id="8-เครื่องมือพื้นฐาน-git-vs-code-nodejs-devtools">8. เครื่องมือพื้นฐาน (Git, VS Code, Node.js, DevTools) </h2>
+<h3 id="81-git--version-control--collaboration">8.1 Git – Version Control &amp; Collaboration </h3>
+<p><strong>เป้าหมายสัปดาห์นี้</strong></p>
+<ul>
+<li>ทุกคนรัน <code>git --version</code> ได้</li>
+<li>เข้าใจ workflow พื้นฐาน: <code>init → add → commit → push → pull</code></li>
+<li>กลุ่มมี remote repo สำหรับ Term Project แล้วจริง ๆ (ใช้ต่อทั้งเทอม)</li>
+</ul>
+<h4 id="ascii--git-workflow">ASCII – Git Workflow </h4>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>แก้โค้ด
+  ↓
+git status → git add → git commit
+  ↓
+git push (ขึ้น remote)
+  ↓
+เพื่อน git pull (ดึงโค้ดล่าสุดมาทำต่อ)
+</code></pre><h3 id="82-vs-code">8.2 VS Code </h3>
+<ul>
+<li>
+<p>Editor หลักของวิชา</p>
+</li>
+<li>
+<p>ฟีเจอร์สำคัญ:</p>
+<ul>
+<li>Extensions (ESLint, Prettier, GitLens)</li>
+<li>Integrated Terminal</li>
+<li>Debugger</li>
+</ul>
+</li>
+<li>
+<p>ทิป: ตั้ง theme และ font ให้เหมาะกับการใช้งานระยะยาว (ไม่แสบตา)</p>
+</li>
+</ul>
+<h3 id="83-nodejs--npm">8.3 Node.js &amp; npm </h3>
+<ul>
+<li>
+<p>ใช้สำหรับรัน JavaScript ฝั่ง server และเครื่องมือ dev</p>
+</li>
+<li>
+<p>คำสั่งเช็ก version:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">node</span> <span class="token parameter variable">-v</span>
+<span class="token function">npm</span> <span class="token parameter variable">-v</span>
+</code></pre></li>
+<li>
+<p>ในสัปดาห์ถัด ๆ จะใช้สำหรับ</p>
+<ul>
+<li>รัน backend (Express.js)</li>
+<li>จัดการ dependencies ของโปรเจกต์</li>
+</ul>
+</li>
+</ul>
+<h3 id="84-browser-devtools">8.4 Browser DevTools </h3>
+<p>Panel ที่อยากให้ นศ. คุ้นในสัปดาห์นี้:</p>
+<ul>
+<li><strong>Elements</strong> – ตรวจ DOM/CSS แก้ text/สไตล์แบบชั่วคราว</li>
+<li><strong>Console</strong> – ดู error/log ของ JS</li>
+<li><strong>Network</strong> – เบื้องต้นแนะนำไว้ก่อน จะใช้จริงเมื่อถึงหัวข้อ API</li>
+</ul>
+<blockquote>
+<p>ใน Lab 1 นักศึกษาจะใช้ DevTools เพื่อ:</p>
+<ul>
+<li>แก้ <code>&lt;h1&gt;</code> ผ่าน Elements</li>
+<li>พิมพ์ <code>console.log()</code> ใน Console</li>
+<li>รัน script เล็ก ๆ ในหน้า HTML</li>
+</ul>
+</blockquote>
+<hr>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
