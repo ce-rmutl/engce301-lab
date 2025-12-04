@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About · ENGCE301 Lab Submission Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-container">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo">
+            <span class="logo-mark">ENGCE301</span>
+            <span class="logo-text">Lab Submission Portal</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="my-labs.html" class="nav-link">My Labs</a>
+            <a href="about.html" class="nav-link active">About</a>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <main>
+        <section class="section">
+            <header class="section-header">
+                <h2>About This Portal</h2>
+                <p>
+                    This page explains how the ENGCE301 Lab Submission Portal
+                    is derived from your SRS, User Stories and Use Cases.
+                </p>
+            </header>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>System Overview</h3>
+                    <p>
+                        <!-- TODO: Student – เขียนคำอธิบายสั้น ๆ ของระบบตาม SRS ของกลุ่ม -->
+                        The portal allows students to view lab details, submit lab work,
+                        and track their grades, while instructors can create labs,
+                        review submissions and provide feedback.
+                    </p>
+                </article>
+
+                <article class="content-card">
+                    <h3>From SRS to Screens</h3>
+                    <ul>
+                        <!-- TODO: Student – ปรับให้ตรงกับ SRS จริงของกลุ่ม -->
+                        <li><strong>FR-2 View Lab List</strong> → Upcoming Labs section on Home page</li>
+                        <li><strong>FR-3 Submit Lab</strong> → Future page: Lab Detail / Submission form</li>
+                        <li><strong>FR-6 Grading &amp; Feedback</strong> → My Labs page + Instructor view</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <header class="section-header">
+                <h2>Mapping: User Stories → UI Elements</h2>
+                <p>Use this section to explicitly map each user story to parts of the UI.</p>
+            </header>
+
+            <div class="content-grid">
+                <article class="content-card">
+                    <h3>Example Mapping</h3>
+                    <ul>
+                        <li>
+                            <strong>US-01 – View Lab List</strong><br>
+                            <span class="text-muted">
+                                → Implemented as the “Upcoming Labs” cards on the Home page.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>US-02 – Submit Lab File</strong><br>
+                            <span class="text-muted">
+                                → Will be implemented as a detailed lab page with a submission form.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>US-03 – View My Lab Status</strong><br>
+                            <span class="text-muted">
+                                → Represented by the “My Lab Status” section and extended in my-labs.html.
+                            </span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="content-card">
+                    <h3>TODO: Your Group Mapping</h3>
+                    <p>
+                        <!-- TODO: Student – ให้กลุ่มของคุณกรอก mapping จริงของกลุ่มที่ใช้ใน Term Project -->
+                        Replace this text with your own mapping between:
+                        <strong>your SRS / User Stories / Use Cases</strong> and the
+                        actual pages/components in this mini portal.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>ENGCE301 – Software Design &amp; Development · Week 3</p>
+        <p class="footer-small">
+            About page: explain how requirements are transformed into UI.
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>

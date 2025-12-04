@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ENGCE301 Lab Submission Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TODO: Student – ถ้าต้องการใช้ Google Fonts ให้เพิ่ม <link> ที่นี่
+         และไปกำหนดในตัวแปร --font-sans ที่ styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Layout Container -->
+    <div class="page-container">
+
+        <!-- ========== HEADER + NAVBAR ========== -->
+        <header class="site-header">
+            <div class="logo">
+                <!-- สามารถใส่โลโก้มหาวิทยาลัย หรือใช้ตัวอักษรแทน -->
+                <span class="logo-mark">ENGCE301</span>
+                <span class="logo-text">Lab Submission Portal</span>
+            </div>
+
+            <nav class="main-nav">
+                <!-- TODO: Student – ตรวจสอบลิงก์ให้ทำงานได้ครบทั้ง 3 หน้า -->
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="my-labs.html" class="nav-link">My Labs</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </header>
+
+        <!-- ========== HERO SECTION ========== -->
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <!-- TODO: Student – ปรับข้อความ Hero ให้สอดคล้องกับ SRS/User Stories ของกลุ่ม
+                         ตัวอย่าง: เน้นเรื่องการส่งงาน, การดูสถานะ, ความยุติธรรมของการให้คะแนน -->
+                    <h1>Manage your ENGCE301 lab submissions in one place.</h1>
+                    <p class="hero-subtitle">
+                        View lab details, submit your work, and track your grades
+                        according to the requirements defined in your SRS &amp; User Stories.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#upcoming-labs" class="btn primary">
+                            View Upcoming Labs
+                        </a>
+                        <a href="#my-status" class="btn secondary">
+                            Check My Lab Status
+                        </a>
+                    </div>
+
+                    <p class="hero-note">
+                        <!-- TODO: Student – แทนค่าด้วยข้อความที่โยงกับ Use Case เช่น UC-01 Submit Lab -->
+                        This page is designed from UC-01: Submit Lab and US-01 / US-03.
+                    </p>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Infographic แบบง่าย ใช้กล่องแทน "Flow" ของ Use Case -->
+                    <div class="hero-flow-card">
+                        <div class="flow-step">SRS</div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step">User Stories</div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step">Use Cases</div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step">Web UI</div>
+                    </div>
+                    <p class="hero-visual-caption">
+                        From requirements to a real interface.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ========== UPCOMING LABS SECTION ========== -->
+            <section id="upcoming-labs" class="section section-labs">
+                <header class="section-header">
+                    <h2>Upcoming Labs</h2>
+                    <p>Based on your SRS &amp; Product Backlog (User Stories)</p>
+                </header>
+
+                <div class="labs-grid">
+                    <!-- ตัวอย่างการ์ด Lab 1 (ทำให้แล้ว) -->
+                    <article class="lab-card">
+                        <div class="lab-meta">
+                            <span class="badge badge-lab">LAB 3</span>
+                            <span class="lab-deadline">Due: 2025-02-10</span>
+                        </div>
+                        <h3>Agile Requirements &amp; Use Case Modeling</h3>
+                        <p class="lab-desc">
+                            Convert SRS into User Stories and Use Case Scenarios
+                            for the ENGCE301 Lab Submission Portal.
+                        </p>
+                        <ul class="lab-tags">
+                            <li>#UserStory</li>
+                            <li>#UseCase</li>
+                            <li>#SRS</li>
+                        </ul>
+                    </article>
+
+                    <!-- TODO: Student – เพิ่ม Lab Card อย่างน้อย 2 ใบ ให้ตรงกับ Backlog ของกลุ่ม
+                         ตัวอย่าง: LAB 4 – HTML Form for Submit Lab, LAB 5 – Authentication, etc. -->
+                    <article class="lab-card todo">
+                        <div class="lab-meta">
+                            <span class="badge badge-lab">TODO</span>
+                            <span class="lab-deadline">Due: (fill in)</span>
+                        </div>
+                        <h3><!-- TODO: ชื่อ LAB ของกลุ่ม --></h3>
+                        <p class="lab-desc">
+                            <!-- TODO: คำอธิบายสั้น ๆ ของ LAB ที่เชื่อมกับ User Story จริง -->
+                        </p>
+                        <ul class="lab-tags">
+                            <!-- TODO: แท็กที่เกี่ยวข้อง เช่น #HTML #CSS #BoxModel -->
+                        </ul>
+                    </article>
+
+                    <article class="lab-card todo">
+                        <!-- TODO: Student – Lab Card เพิ่มเติม -->
+                    </article>
+                </div>
+            </section>
+
+            <!-- ========== MY STATUS SECTION ========== -->
+            <section id="my-status" class="section section-status">
+                <header class="section-header">
+                    <h2>My Lab Status (Mock Data)</h2>
+                    <p>
+                        This section represents <strong>US-03: View My Lab Status</strong>.
+                        Replace the mock data with real data in future terms.
+                    </p>
+                </header>
+
+                <div class="status-table">
+                    <div class="status-row status-header">
+                        <span>Lab</span>
+                        <span>Title</span>
+                        <span>Status</span>
+                        <span>Score</span>
+                    </div>
+
+                    <!-- แถวตัวอย่าง 1 -->
+                    <div class="status-row">
+                        <span>LAB 1</span>
+                        <span>HTML Structure &amp; Semantic</span>
+                        <span><span class="status-tag status-done">Submitted</span></span>
+                        <span>100 / 100</span>
+                    </div>
+
+                    <!-- แถวตัวอย่าง 2 -->
+                    <div class="status-row">
+                        <span>LAB 2</span>
+                        <span>Requirements Elicitation</span>
+                        <span><span class="status-tag status-done">Submitted</span></span>
+                        <span>–</span>
+                    </div>
+
+                    <!-- TODO: Student – เพิ่มแถว mock data สำหรับ LAB 3-5
+                         และใช้ class status-pending / status-late ตามเงื่อนไขที่กลุ่มกำหนด -->
+                    <div class="status-row todo">
+                        <span>LAB 3</span>
+                        <span><!-- TODO: ชื่อ LAB 3 ของกลุ่ม --></span>
+                        <span><span class="status-tag status-pending">TODO</span></span>
+                        <span>–</span>
+                    </div>
+                </div>
+
+                <p class="section-note">
+                    <!-- TODO: Student – เขียนข้อความอธิบายเชื่อมกับ Late Submission Policy จาก SRS -->
+                    Note: Late submissions will be marked according to the policy defined in your SRS.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="site-footer">
+            <p>ENGCE301 – Software Design &amp; Development · Week 3</p>
+            <p class="footer-small">
+                This UI is derived from SRS, User Stories, and Use Cases created in LAB 3.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
