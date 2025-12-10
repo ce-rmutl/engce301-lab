@@ -1,0 +1,251 @@
+/* 
+  ENGCE301 – Week 4 LAB Starter CSS
+  นักศึกษาต้องแก้ไข/เติมตาม TODO ด้านล่าง
+*/
+
+/* ===== 0. Reset พื้นฐาน ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* TODO: ลองปรับฟอนต์, สีพื้นหลัง, สีตัวอักษร ให้เข้ากับ Persona */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ทำให้ลิงก์ดูเป็นปกติ และมีสีตอน hover */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 1. Layout หลักของหน้า ===== */
+
+.site-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-area h1 {
+  font-size: 1.8rem;
+  color: #f97316;
+}
+
+.logo-area .tagline {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  /* TODO: ปรับสีปุ่มให้เข้ากับธีม persona ของคุณ */
+}
+
+.main-nav a:hover {
+  border-color: #38bdf8;
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* ตัว container หลักของเนื้อหา */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* ===== 2. Section และ Card ===== */
+
+.section {
+  margin-top: 2.5rem;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* แถวของ card (ใช้ Flexbox) */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Card พื้นฐาน */
+.card {
+  flex: 1 1 250px; /* กว้างปรับได้, อย่างน้อย 250px */
+  background-color: rgba(15, 23, 42, 0.95);
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: #facc15;
+}
+
+.card p,
+.card li {
+  font-size: 0.95rem;
+}
+
+/* Section Tasks Layout (ตัวอย่างการทำ 2 คอลัมน์) */
+.tasks-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tasks-list {
+  flex: 1 1 260px;
+}
+
+.tasks-list ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.tasks-table-wrapper {
+  flex: 1 1 320px;
+}
+
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tasks-table th,
+.tasks-table td {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.4rem 0.6rem;
+}
+
+.tasks-table th {
+  background-color: rgba(30, 64, 175, 0.8);
+}
+
+.tasks-table tbody tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+/* Section Extra */
+.extra-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===== 3. Footer ===== */
+
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* ===== 4. Responsive Design (Media Queries) ===== */
+
+/* 
+  TODO: นักศึกษาต้องเติม/แก้เนื้อหาภายใน media query ให้เหมาะสม
+  โดยดูโจทย์จาก LAB (เน้น Mobile-First)
+*/
+
+/* Tablet และจอที่กว้างไม่มาก (<= 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  /* TODO: ลองเปลี่ยน layout ของ tasks / extra ให้เป็น 1 คอลัมน์บน tablet */
+  .tasks-layout,
+  .extra-layout {
+    flex-direction: column;
+  }
+}
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem; /* TODO: นักศึกษาปรับเองได้ ถ้ารู้สึกเล็ก/ใหญ่ไป */
+  }
+
+  .logo-area h1 {
+    font-size: 1.4rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .cards-row {
+    flex-direction: column;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+  }
+
+  /* TODO: เลือกว่าจะแสดง/ซ่อน element ใดบนจอเล็ก
+     เช่น ถ้าบางตารางอ่านยากบนมือถือ อาจเปลี่ยนเป็น list แทน
+  */
+}
