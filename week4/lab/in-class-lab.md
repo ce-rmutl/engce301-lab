@@ -1,4 +1,4 @@
-# LAB วันที่ 1 - HTML, CSS และ Responsive Design
+# LAB  - HTML, CSS และ Responsive Design
 ## ENGCE301 - การออกแบบและพัฒนาซอฟต์แวร์
 
 ---
