@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Test</title>
+</head>
+<body>
+  <h1>Products</h1>
+  <div id="products"></div>
+  <button onclick="loadProducts()">Load Products</button>
+  <button onclick="addProduct()">Add Product</button>
+
+  <script>
+    // 🟢 GET - ดึงข้อมูล
+    function loadProducts() {
+      fetch('http://localhost:3000/api/products')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById('products').innerHTML = 
+            JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // 🔵 POST - เพิ่มข้อมูล
+    function addProduct() {
+      fetch('http://localhost:3000/api/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: 'Headphones',
+          price: 1500
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Added:', data);
+          loadProducts();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
