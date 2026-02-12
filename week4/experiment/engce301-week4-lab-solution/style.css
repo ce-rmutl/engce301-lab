@@ -1,0 +1,298 @@
+/* 
+  ENGCE301 – Week 4 LAB Solution CSS
+  จุดประสงค์: ให้เห็นตัวอย่างโค้ดที่อ่านง่าย, แยกส่วนชัดเจน และรองรับ Responsive
+*/
+
+/* ===== 0. Reset พื้นฐาน ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ใช้โทน Dark เพื่อให้อ่านง่ายในที่แสงน้อย (ตาม persona ที่ใช้ตอนกลางคืนบ่อย) */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ทำให้ลิงก์ดูเป็นปกติ และมีสีตอน hover */
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== 1. Layout หลักของหน้า ===== */
+
+.site-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-area h1 {
+  font-size: 1.9rem;
+  color: #f97316; /* สีส้มสดใส ช่วยให้หัวข้อเด่น */
+}
+
+.logo-area .tagline {
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  background-color: rgba(15, 23, 42, 0.85);
+}
+
+.main-nav a:hover {
+  border-color: #38bdf8;
+  background-color: rgba(15, 23, 42, 1);
+}
+
+/* ตัว container หลักของเนื้อหา */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* ===== 2. Section และ Card ===== */
+
+.section {
+  margin-top: 2.5rem;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* แถวของ card (ใช้ Flexbox) */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Card พื้นฐาน */
+.card {
+  flex: 1 1 250px; /* กว้างปรับได้, อย่างน้อย 250px */
+  background-color: rgba(15, 23, 42, 0.98);
+  border-radius: 0.75rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: #facc15;
+}
+
+.card p,
+.card li {
+  font-size: 0.95rem;
+}
+
+.card ul {
+  list-style: disc;
+  padding-left: 1.1rem;
+}
+
+.note-small {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-top: 0.35rem;
+}
+
+/* Progress bar แบบง่าย */
+.progress-bar {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 999px;
+  background-color: rgba(30, 64, 175, 0.5);
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #22c55e, #a3e635);
+}
+
+/* Section Tasks Layout (ตัวอย่างการทำ 2 คอลัมน์) */
+.tasks-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tasks-list {
+  flex: 1 1 260px;
+}
+
+.tasks-list ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.tasks-table-wrapper {
+  flex: 1 1 320px;
+}
+
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tasks-table th,
+.tasks-table td {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.4rem 0.6rem;
+}
+
+.tasks-table th {
+  background-color: rgba(30, 64, 175, 0.85);
+}
+
+.tasks-table tbody tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.75);
+}
+
+/* สีสถานะช่วยให้ดูเร็ว ๆ รู้ว่าควรโฟกัสงานไหน */
+.status-todo {
+  color: #f97373;
+}
+
+.status-in-progress {
+  color: #fb923c;
+}
+
+.status-done {
+  color: #4ade80;
+}
+
+/* Section Extra */
+.extra-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ===== 3. Footer ===== */
+
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.back-to-top a {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* ===== 4. Responsive Design (Media Queries) ===== */
+
+/* 
+  แนวคิด: 
+  - Tablet: เปลี่ยน layout หลายคอลัมน์ เป็น 1 คอลัมน์
+  - Mobile: ลดฟอนต์/spacing และ stack ทุกอย่างเป็นแนวตั้ง
+*/
+
+/* Tablet และจอที่กว้างไม่มาก (<= 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  /* แปลง layout tasks / extra ให้เป็น 1 คอลัมน์เพื่ออ่านง่ายขึ้น */
+  .tasks-layout,
+  .extra-layout {
+    flex-direction: column;
+  }
+}
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .logo-area h1 {
+    font-size: 1.4rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .cards-row {
+    flex-direction: column;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ตารางอาจอ่านยากบนจอเล็ก แต่ในเฉลยนี้ยังคงไว้ให้เห็นตัวอย่าง;
+     นักศึกษาสามารถลองแปลงเป็น list ได้เองเพื่อฝึกต่อยอด */
+}

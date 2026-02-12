@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 – Persona Dashboard (Solution)</title>
+
+    <!-- ใช้ไฟล์ CSS ภายนอก เพื่อให้โครงสร้างสะอาด และฝึกแยก concerns -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        ตัวอย่างเฉลย: Persona Dashboard สำหรับนักศึกษาปี 2
+        - ดูงานที่ต้องส่ง
+        - ดูตารางเรียน/นัดหมาย
+        - ดูลิงก์ที่ใช้บ่อย
+    -->
+
+    <header class="site-header">
+        <div class="logo-area">
+            <!-- ชื่อระบบสะท้อน persona: "Mint" นักศึกษาวิศวกรรมซอฟต์แวร์ -->
+            <h1>Mint Study Dashboard</h1>
+            <p class="tagline">ให้มิ้นท์เห็นทุกงานและทุกเดดไลน์ในหน้าเดียว</p>
+        </div>
+
+        <nav class="main-nav">
+            <!-- เมนูน้อย ชัด เน้นเคลียร์ ไม่ให้สับสน -->
+            <a href="#today">วันนี้</a>
+            <a href="#tasks">งานของมิ้นท์</a>
+            <a href="#extra">ลิงก์ &amp; Tips</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: ภาพรวมวันนี้ / Overview -->
+        <section id="today" class="section section-today">
+            <header class="section-header">
+                <h2>ภาพรวมวันนี้ของมิ้นท์</h2>
+                <p class="section-subtitle">
+                    สรุปสิ่งที่สำคัญที่สุด 3 อย่างที่มิ้นท์อยากเห็นเมื่อเปิดหน้าเว็บนี้
+                </p>
+            </header>
+
+            <div class="cards-row">
+                <!-- การ์ดที่ 1: เน้นงานที่ต้องทำวันนี้ -->
+                <article class="card">
+                    <h3>งานวันนี้</h3>
+                    <p><strong>งานที่ต้องทำ:</strong> 2 งานหลัก</p>
+                    <ul>
+                        <li>ทำ LAB Week 4 – ENGCE301 (HTML + CSS + UX)</li>
+                        <li>อ่านสรุปบทเรียน Design Principles ก่อน quiz</li>
+                    </ul>
+                </article>
+
+                <!-- การ์ดที่ 2: นัดหมายสำคัญของวัน -->
+                <article class="card">
+                    <h3>นัดหมายสำคัญ</h3>
+                    <ul>
+                        <li><strong>13:00</strong> – ประชุมกลุ่มโปรเจกต์ฝึกงาน</li>
+                        <li><strong>19:30</strong> – ทำแบบฝึกหัด Java &amp; Review</li>
+                    </ul>
+                    <p class="note-small">* ถ้ามีเวลาว่างให้กันช่วง 21:30 ไว้สรุปงานวันนี้</p>
+                </article>
+
+                <!-- การ์ดที่ 3: แสดง progress แบบง่าย ๆ -->
+                <article class="card">
+                    <h3>ความคืบหน้าสัปดาห์นี้</h3>
+                    <p>งานที่ทำเสร็จแล้ว: <strong>4 / 7 งาน</strong></p>
+                    <div class="progress-bar">
+                        <!-- ใช้ div ซ้อนกันทำเป็น progress bar ง่าย ๆ -->
+                        <div class="progress-bar-inner" style="width: 57%;"></div>
+                    </div>
+                    <p class="note-small">เป้าหมาย: ให้ถึง 80% ภายในวันศุกร์</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 2: งานที่ต้องทำ / Tasks -->
+        <section id="tasks" class="section section-tasks">
+            <header class="section-header">
+                <h2>งานของมิ้นท์ในสัปดาห์นี้</h2>
+                <p class="section-subtitle">
+                    รวมงานที่ต้องทำ (To-Do) และตารางงานที่มี deadline ชัดเจน
+                </p>
+            </header>
+
+            <div class="tasks-layout">
+                <!-- รายการ To-Do แบบ list -->
+                <div class="tasks-list">
+                    <h3>To-Do List</h3>
+                    <ul>
+                        <li>ทำ LAB Week 4 และ deploy ขึ้น GitHub Pages</li>
+                        <li>แก้โค้ด Assignment Java ให้ผ่าน Unit Test</li>
+                        <li>เตรียมสไลด์สรุป Design Principles สำหรับกลุ่ม</li>
+                        <li>อัปเดตตารางอ่านหนังสือก่อน midterm</li>
+                    </ul>
+                </div>
+
+                <!-- ตารางงานเน้น deadline -->
+                <div class="tasks-table-wrapper">
+                    <h3>ตารางงานและกำหนดส่ง</h3>
+                    <table class="tasks-table">
+                        <thead>
+                            <tr>
+                                <th>งาน</th>
+                                <th>กำหนดส่ง</th>
+                                <th>สถานะ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LAB Week 4 – Persona Dashboard</td>
+                                <td>พุธ 23:59</td>
+                                <td class="status-in-progress">กำลังทำ</td>
+                            </tr>
+                            <tr>
+                                <td>แบบฝึกหัด Design Principles (Online Quiz)</td>
+                                <td>ศุกร์ 20:00</td>
+                                <td class="status-todo">ยังไม่ได้เริ่ม</td>
+                            </tr>
+                            <tr>
+                                <td>แก้รายงานโปรเจกต์วิชา ENGCE301</td>
+                                <td>อาทิตย์ 23:59</td>
+                                <td class="status-done">เสร็จแล้ว 80%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="note-small">
+                        หมายเหตุ: สีเขียว = เสร็จแล้ว / สีส้ม = กำลังทำ / สีแดง = ยังไม่ได้เริ่ม
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: ข้อมูลเสริม / Extra Info -->
+        <section id="extra" class="section section-extra">
+            <header class="section-header">
+                <h2>ลิงก์ &amp; Tips ที่ช่วยชีวิตมิ้นท์</h2>
+                <p class="section-subtitle">
+                    ส่วนนี้รวบรวมลิงก์ที่ใช้บ่อย และ Tips ในการจัดการเวลาเรียน/งาน
+                </p>
+            </header>
+
+            <div class="extra-layout">
+                <article class="card">
+                    <h3>Tips ประจำวัน</h3>
+                    <ul>
+                        <li>ใช้เทคนิค <strong>Pomodoro</strong>: ทำงาน 25 นาที พัก 5 นาที</li>
+                        <li>ก่อนนอน 10 นาที: list งานพรุ่งนี้ 3 อย่างสำคัญที่สุด</li>
+                        <li>เริ่มจากงานยากที่สุดในช่วงที่สมองโล่ง (เช้า/สาย)</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>ลิงก์ที่ใช้บ่อย</h3>
+                    <ul>
+                        <li><a href="https://classroom.google.com" target="_blank">Google Classroom</a></li>
+                        <li><a href="https://calendar.google.com" target="_blank">Google Calendar</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>สร้างเพื่อ ENGCE301 – Week 4 LAB (HTML, CSS &amp; Responsive Design)</p>
+        <p class="back-to-top">
+            <!-- ปุ่มกลับขึ้นด้านบน หน้าเล็ก ๆ แต่มีประโยชน์ -->
+            <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+                ↑ กลับขึ้นด้านบน
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

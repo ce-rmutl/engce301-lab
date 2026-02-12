@@ -1,0 +1,279 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background: white;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Image */
+#about img {
+    border-radius: 50%;
+    border: 5px solid #3498db;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lists Styling */
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+li strong {
+    color: #2c3e50;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Contact Section Special Styling */
+#contact {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+#contact h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
+#contact a {
+    color: white;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #f8f9fa;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Color Variations for Sections */
+#education {
+    border-left: 5px solid #e74c3c;
+}
+
+#hobbies {
+    border-left: 5px solid #f39c12;
+}
+
+#about {
+    border-left: 5px solid #27ae60;
+}
+
+/* Hover Effects */
+section h2 {
+    transition: color 0.3s ease;
+}
+
+section:hover h2 {
+    color: #3498db;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flexible Container */
+main {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem; /* ลด padding บนมือถือ */
+}
+
+/* Tablet Styles (768px and down) */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 2rem 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Navigation adjustments */
+    nav a {
+        margin: 0.25rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Main content adjustments */
+    main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Profile image */
+    #about img {
+        width: 150px;
+    }
+}
+
+/* Mobile Styles (480px and down) */
+@media (max-width: 480px) {
+    /* Header adjustments */
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Navigation - Stack vertically */
+    nav {
+        margin-top: 1rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 0.5rem auto;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    /* Main content */
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    p, li {
+        font-size: 1rem;
+    }
+    
+    /* Profile image */
+    #about img {
+        width: 120px;
+    }
+    
+    /* Lists - reduce margin */
+    ul, ol {
+        margin-left: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+}

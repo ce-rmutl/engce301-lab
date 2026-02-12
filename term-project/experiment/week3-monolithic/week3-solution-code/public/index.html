@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board - Monolithic Architecture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ========================================
+             HEADER SECTION
+             ======================================== -->
+        <header>
+            <h1>📋 Task Board</h1>
+            <p class="subtitle">Monolithic Architecture Demo - Week 3</p>
+        </header>
+
+        <!-- ========================================
+             ADD TASK FORM SECTION
+             ======================================== -->
+        <section class="add-task-section">
+            <h2>➕ Add New Task</h2>
+            
+            <!-- TODO: Complete the form with proper event handling -->
+            <form id="addTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title *</label>
+                    <input 
+                        type="text" 
+                        id="taskTitle" 
+                        placeholder="Enter task title" 
+                        required
+                        maxlength="200"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <!-- TODO: Add textarea for description -->
+                    <textarea 
+                        id="taskDescription" 
+                        placeholder="Enter task description"
+                        rows="3"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskPriority">Priority</label>
+                    <!-- TODO: Add select dropdown for priority -->
+                    <select id="taskPriority">
+                        <option value="LOW">Low</option>
+                        <option value="MEDIUM" selected>Medium</option>
+                        <option value="HIGH">High</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+        </section>
+
+        <!-- ========================================
+             TASKS DISPLAY SECTION
+             ======================================== -->
+        <section class="tasks-section">
+            <h2>📊 All Tasks</h2>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <label for="statusFilter">Filter by Status:</label>
+                <!-- TODO: Add filter dropdown -->
+                <select id="statusFilter">
+                    <option value="ALL">All Tasks</option>
+                    <option value="TODO">To Do</option>
+                    <option value="IN_PROGRESS">In Progress</option>
+                    <option value="DONE">Done</option>
+                </select>
+            </div>
+
+            <!-- Task Columns (Kanban Style) -->
+            <div class="task-columns">
+                <!-- TODO Column -->
+                <div class="task-column">
+                    <h3 class="column-header todo-header">
+                        📝 To Do (<span id="todoCount">0</span>)
+                    </h3>
+                    <!-- TODO: This div will be populated by JavaScript -->
+                    <div id="todoTasks" class="task-list">
+                        <!-- Tasks will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- IN PROGRESS Column -->
+                <div class="task-column">
+                    <h3 class="column-header progress-header">
+                        🔄 In Progress (<span id="progressCount">0</span>)
+                    </h3>
+                    <!-- TODO: This div will be populated by JavaScript -->
+                    <div id="progressTasks" class="task-list">
+                        <!-- Tasks will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- DONE Column -->
+                <div class="task-column">
+                    <h3 class="column-header done-header">
+                        ✅ Done (<span id="doneCount">0</span>)
+                    </h3>
+                    <!-- TODO: This div will be populated by JavaScript -->
+                    <div id="doneTasks" class="task-list">
+                        <!-- Tasks will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             FOOTER
+             ======================================== -->
+        <footer>
+            <p>ENGSE207 Software Architecture - Week 3 Lab</p>
+            <p>Architecture Type: <strong>Monolithic</strong></p>
+        </footer>
+    </div>
+
+    <!-- ========================================
+         LOADING OVERLAY (Optional Enhancement)
+         ======================================== -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- 
+========================================
+TASK CARD EXAMPLE (for reference)
+========================================
+
+Your JavaScript should create cards like this:
+
+<div class="task-card">
+    <div class="task-header">
+        <div class="task-title">Task Title Here</div>
+        <span class="priority-badge priority-high">HIGH</span>
+    </div>
+    <div class="task-description">Description here...</div>
+    <div class="task-meta">Created: Jan 15, 2025</div>
+    <div class="task-actions">
+        <button class="btn btn-success btn-sm">→ Done</button>
+        <button class="btn btn-danger btn-sm">🗑️ Delete</button>
+    </div>
+</div>
+
+========================================
+-->
