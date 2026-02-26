@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-01-25T10:00:00.000Z" agent="ENGSE207" version="22.1.0" type="device">
+  <diagram name="VM vs Docker Comparison" id="comparison">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="N-Tier Architecture: VM vs Docker Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- VERSION 1: VM Section -->
+        <mxCell id="vm-section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="700" height="780" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="vm-title" value="Version 1: Single VM Deployment" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="660" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- VM Box -->
+        <mxCell id="vm-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="620" height="520" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="vm-label" value="Ubuntu VM" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="320" y="165" width="140" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Nginx on VM -->
+        <mxCell id="vm-nginx" value="🌐 Nginx&#xa;(apt install nginx)&#xa;Port: 80, 443" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="200" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow from Nginx to Node.js -->
+        <mxCell id="vm-arrow1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="280" as="sourcePoint" />
+            <mxPoint x="390" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Node.js on VM -->
+        <mxCell id="vm-nodejs" value="⚙️ Node.js + PM2&#xa;(nvm install 20)&#xa;Port: 3000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="320" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow from Node.js to PostgreSQL -->
+        <mxCell id="vm-arrow2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="400" as="sourcePoint" />
+            <mxPoint x="390" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- PostgreSQL on VM -->
+        <mxCell id="vm-postgres" value="🗄️ PostgreSQL&#xa;(apt install postgresql)&#xa;Port: 5432" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Shared Resources Label -->
+        <mxCell id="vm-shared" value="📦 Shared Resources:&#xa;• OS Libraries&#xa;• System Packages&#xa;• Network Stack&#xa;• File System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="550" width="180" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- VM Characteristics -->
+        <mxCell id="vm-chars" value="🔧 Setup Process:&#xa;• sudo apt install postgresql (5 min)&#xa;• nvm install 20 (3 min)&#xa;• sudo apt install nginx (2 min)&#xa;• Configure each service (20 min)&#xa;• Total: ~30-50 minutes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="550" width="240" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- VM Issues -->
+        <mxCell id="vm-issues" value="❌ Issues:&#xa;• Setup takes time&#xa;• 'Works on my machine'&#xa;• Cleanup is complex&#xa;• Hard to replicate" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="550" width="120" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- VM Commands -->
+        <mxCell id="vm-commands" value="Commands:&#xa;systemctl start postgresql&#xa;pm2 start server.js&#xa;systemctl start nginx&#xa;systemctl enable nginx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontFamily=Courier New;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="300" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- VERSION 2: Docker Section -->
+        <mxCell id="docker-section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="700" height="780" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="docker-title" value="Version 2: Docker Container Deployment" style="text;html=1;strokeColor=none;fillColor=#00d9ff;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=16;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="880" y="100" width="660" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Host Box -->
+        <mxCell id="docker-host" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#00d9ff;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="900" y="160" width="620" height="520" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="docker-label" value="🐳 Docker Host" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#00d9ff;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="165" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Nginx Container -->
+        <mxCell id="docker-nginx" value="🌐 nginx:alpine&#xa;Container: taskboard-nginx&#xa;Ports: 80:80, 443:443" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="200" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Docker Nginx to API -->
+        <mxCell id="docker-arrow1" value="api:3000" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#00d9ff;fontColor=#00d9ff;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="280" as="sourcePoint" />
+            <mxPoint x="1210" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- API Container -->
+        <mxCell id="docker-api" value="⚙️ node:20-alpine&#xa;Container: taskboard-api&#xa;Internal Port: 3000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="320" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Docker API to DB -->
+        <mxCell id="docker-arrow2" value="db:5432" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#00d9ff;fontColor=#00d9ff;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="400" as="sourcePoint" />
+            <mxPoint x="1210" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- PostgreSQL Container -->
+        <mxCell id="docker-postgres" value="🗄️ postgres:16-alpine&#xa;Container: taskboard-db&#xa;Internal Port: 5432" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="440" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Network -->
+        <mxCell id="docker-network" value="🔗 Docker Network:&#xa;taskboard-network&#xa;&#xa;• DNS Resolution&#xa;• Isolated&#xa;• Bridge Mode" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00d9ff;strokeColor=#1a1a2e;fontSize=11;align=left;spacingLeft=10;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="920" y="230" width="150" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Volume -->
+        <mxCell id="docker-volume" value="💾 Docker Volume:&#xa;postgres_data&#xa;&#xa;• Persistent&#xa;• Survives restarts&#xa;• Easy backup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="380" width="150" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Advantages -->
+        <mxCell id="docker-chars" value="⚡ Setup Process:&#xa;$ docker compose up -d&#xa;&#xa;• Download images (3 min first time)&#xa;• Start containers (10 sec)&#xa;• Total: &lt;1 minute (after first run)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="550" width="230" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Benefits -->
+        <mxCell id="docker-benefits" value="✅ Benefits:&#xa;• Consistent everywhere&#xa;• Easy cleanup&#xa;• Portable&#xa;• Version controlled" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="550" width="140" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Tradeoffs -->
+        <mxCell id="docker-tradeoffs" value="⚠️ Tradeoffs:&#xa;• Learning curve&#xa;• Overhead&#xa;• Complexity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="550" width="110" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Commands -->
+        <mxCell id="docker-commands" value="Commands:&#xa;docker compose up -d&#xa;docker compose down&#xa;docker compose logs -f&#xa;docker compose ps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#00d9ff;fontSize=10;fontFamily=Courier New;align=left;spacingLeft=5;fontColor=#00d9ff;" vertex="1" parent="1">
+          <mxGeometry x="900" y="700" width="300" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Footer -->
+        <mxCell id="footer" value="ENGSE207 Software Architecture - Week 6: N-Tier Architecture (VM vs Docker)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="870" width="800" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- Second Diagram: Docker Architecture Detail -->
+  <diagram name="Docker Architecture Detail" id="docker-detail">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title2" value="Docker Compose Architecture - Task Board System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Browser -->
+        <mxCell id="browser" value="🖥️ Browser&#xa;(Client)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="80" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Browser to Nginx -->
+        <mxCell id="arrow-browser" value="HTTPS :443" style="endArrow=classic;html=1;rounded=0;strokeWidth=3;strokeColor=#00d9ff;fontSize=12;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="140" as="sourcePoint" />
+            <mxPoint x="700" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Docker Host Container -->
+        <mxCell id="docker-host2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#00d9ff;strokeWidth=3;opacity=90;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="1200" height="600" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="docker-host-label" value="🐳 Docker Host (docker-compose.yml)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#00d9ff;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="400" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Nginx Container -->
+        <mxCell id="nginx-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="360" height="140" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="nginx-title" value="Container: taskboard-nginx" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="570" y="265" width="260" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="nginx-image" value="Image: nginx:alpine" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="570" y="285" width="260" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="nginx-functions" value="• SSL Termination (HTTPS → HTTP)&#xa;• Static File Serving (frontend/)&#xa;• Reverse Proxy (/api/* → api:3000)&#xa;• Port Mapping: 80:80, 443:443" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#333333;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="530" y="310" width="340" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Nginx to API -->
+        <mxCell id="arrow-nginx-api" value="HTTP api:3000" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#00d9ff;fontSize=11;fontStyle=1;entryX=0.5;entryY=0;" edge="1" parent="1">
+          <mxGeometry x="-0.1429" y="10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="400" as="sourcePoint" />
+            <mxPoint x="700" y="460" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- API Container -->
+        <mxCell id="api-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="460" width="360" height="160" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="api-title" value="Container: taskboard-api" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="570" y="465" width="260" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="api-image" value="Image: week6-ntier-docker-api:latest (custom)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="540" y="485" width="300" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="api-functions" value="• REST API Endpoints&#xa;• Layered Architecture:&#xa;  - Controllers (Presentation)&#xa;  - Services (Business Logic)&#xa;  - Repositories (Data Access)&#xa;• Health Check: /api/health" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#333333;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="530" y="510" width="340" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow API to DB -->
+        <mxCell id="arrow-api-db" value="TCP db:5432" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#00d9ff;fontSize=11;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="620" as="sourcePoint" />
+            <mxPoint x="700" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- PostgreSQL Container -->
+        <mxCell id="db-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="680" width="360" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="db-title" value="Container: taskboard-db" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="570" y="685" width="260" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="db-image" value="Image: postgres:16-alpine" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="570" y="705" width="260" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="db-functions" value="• Database: taskboard_db | User: taskboard | Port: 5432 (internal)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="530" y="730" width="340" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Network -->
+        <mxCell id="network-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00d9ff;strokeColor=#1a1a2e;strokeWidth=2;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="130" y="260" width="240" height="280" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="network-title" value="🔗 Docker Network" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#00d9ff;" vertex="1" parent="1">
+          <mxGeometry x="150" y="270" width="200" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="network-name" value="taskboard-network" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#1a1a2e;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="150" y="295" width="200" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="network-features" value="Features:&#xa;• Bridge Mode&#xa;• Internal DNS Resolution&#xa;• Container name = hostname&#xa;• Isolated from host&#xa;&#xa;DNS Entries:&#xa;• nginx → taskboard-nginx&#xa;• api → taskboard-api&#xa;• db → taskboard-db" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#1a1a2e;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="320" width="220" height="200" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Volume -->
+        <mxCell id="volume-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="560" width="240" height="160" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="volume-title" value="💾 Docker Volume" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="150" y="570" width="200" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="volume-name" value="postgres_data" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="150" y="595" width="200" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="volume-features" value="• Persistent data storage&#xa;• Survives container restarts&#xa;• Easy backup and restore&#xa;• Mounted to:&#xa;  /var/lib/postgresql/data" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#333333;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="620" width="220" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Volume to DB -->
+        <mxCell id="arrow-volume-db" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#9673a6;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="650" as="sourcePoint" />
+            <mxPoint x="520" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Config Files -->
+        <mxCell id="config-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="980" y="260" width="280" height="260" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="config-title" value="📁 Mounted Configurations" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="270" width="240" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="config-content" value="./nginx/nginx.conf&#xa;  → /etc/nginx/nginx.conf&#xa;&#xa;./nginx/conf.d/&#xa;  → /etc/nginx/conf.d/&#xa;&#xa;./nginx/ssl/&#xa;  → /etc/nginx/ssl/&#xa;&#xa;./frontend/&#xa;  → /usr/share/nginx/html/&#xa;&#xa;./database/init.sql&#xa;  → /docker-entrypoint-initdb.d/" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#333333;fontFamily=Courier New;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="990" y="300" width="260" height="210" as="geometry" />
+        </mxCell>
+        
+        <!-- Environment Variables -->
+        <mxCell id="env-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="980" y="540" width="280" height="180" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="env-title" value="🔐 Environment Variables (.env)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="550" width="240" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="env-content" value="DB_HOST=db&#xa;DB_PORT=5432&#xa;DB_NAME=taskboard_db&#xa;DB_USER=taskboard&#xa;DB_PASSWORD=taskboard123&#xa;PORT=3000&#xa;NODE_ENV=development" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#333333;fontFamily=Courier New;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="990" y="580" width="260" height="130" as="geometry" />
+        </mxCell>
+        
+        <!-- Footer -->
+        <mxCell id="footer2" value="ENGSE207 Software Architecture - Week 6 Docker Version | มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="820" width="800" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- Third Diagram: Request Flow -->
+  <diagram name="Request Flow" id="request-flow">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="flow-title" value="Request Flow: Create Task (POST /api/tasks)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Browser -->
+        <mxCell id="flow-browser" value="🖥️&#xa;Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="100" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Nginx -->
+        <mxCell id="flow-nginx" value="🌐&#xa;Nginx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="100" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- API -->
+        <mxCell id="flow-api" value="⚙️&#xa;API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="100" width="100" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Database -->
+        <mxCell id="flow-db" value="🗄️&#xa;PostgreSQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="100" width="100" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 1 -->
+        <mxCell id="step1" value="1. HTTPS POST&#xa;/api/tasks&#xa;{title: 'New Task'}" style="text;html=1;strokeColor=none;fillColor=#dae8fc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="220" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#1a1a2e;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="140" as="sourcePoint" />
+            <mxPoint x="330" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 2 -->
+        <mxCell id="step2" value="2. SSL Decrypt&#xa;Route to /api/*&#xa;→ proxy_pass api:3000" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="220" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#1a1a2e;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="140" as="sourcePoint" />
+            <mxPoint x="580" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 3 -->
+        <mxCell id="step3" value="3. Controller receives&#xa;Service validates&#xa;Repository prepares SQL" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="220" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#1a1a2e;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="140" as="sourcePoint" />
+            <mxPoint x="830" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 4 -->
+        <mxCell id="step4" value="4. INSERT INTO tasks&#xa;RETURNING *" style="text;html=1;strokeColor=none;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="220" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Response Flow -->
+        <mxCell id="response-title" value="Response Flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="200" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 5 -->
+        <mxCell id="step5" value="5. Return new task row" style="text;html=1;strokeColor=none;fillColor=#f8cecc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="180" as="sourcePoint" />
+            <mxPoint x="680" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 6 -->
+        <mxCell id="step6" value="6. JSON Response&#xa;{success: true,&#xa; data: {...}}" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="360" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="180" as="sourcePoint" />
+            <mxPoint x="430" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 7 -->
+        <mxCell id="step7" value="7. SSL Encrypt&#xa;Response" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow7" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="180" as="sourcePoint" />
+            <mxPoint x="180" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Step 8 -->
+        <mxCell id="step8" value="8. Display&#xa;Success!" style="text;html=1;strokeColor=none;fillColor=#e1d5e7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Docker Network Note -->
+        <mxCell id="network-note" value="🔗 All communication happens through Docker Network (taskboard-network)&#xa;Containers reference each other by name: nginx → api:3000 → db:5432" style="text;html=1;strokeColor=#00d9ff;fillColor=#1a1a2e;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=12;fontColor=#00d9ff;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="450" width="500" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Sequence Diagram Style -->
+        <mxCell id="seq-browser" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="180" as="sourcePoint" />
+            <mxPoint x="130" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="seq-nginx" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="180" as="sourcePoint" />
+            <mxPoint x="380" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="seq-api" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1;strokeColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="180" as="sourcePoint" />
+            <mxPoint x="630" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="seq-db" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1;strokeColor=#b85450;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="880" y="180" as="sourcePoint" />
+            <mxPoint x="880" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Footer -->
+        <mxCell id="flow-footer" value="ENGSE207 Software Architecture - Week 6 Docker Version" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="400" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

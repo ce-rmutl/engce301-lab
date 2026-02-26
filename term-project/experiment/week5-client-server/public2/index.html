@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board - N-Tier Architecture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📋 Task Board</h1>
+                <p class="subtitle">N-Tier Architecture - Week 6</p>
+            </div>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="stat-card" id="statTotal">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-card stat-todo" id="statTodo">
+                <span class="stat-number">0</span>
+                <span class="stat-label">To Do</span>
+            </div>
+            <div class="stat-card stat-progress" id="statProgress">
+                <span class="stat-number">0</span>
+                <span class="stat-label">In Progress</span>
+            </div>
+            <div class="stat-card stat-done" id="statDone">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Done</span>
+            </div>
+        </section>
+
+        <!-- Add Task Form -->
+        <section class="add-task-section">
+            <h2>➕ Add New Task</h2>
+            <form id="addTaskForm" class="task-form">
+                <div class="form-row">
+                    <div class="form-group flex-grow">
+                        <label for="taskTitle">Title *</label>
+                        <input type="text" id="taskTitle" placeholder="Enter task title..." 
+                               required minlength="3" maxlength="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="LOW">🟢 Low</option>
+                            <option value="MEDIUM" selected>🟡 Medium</option>
+                            <option value="HIGH">🔴 High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea id="taskDescription" placeholder="Enter description (required for HIGH priority)..." rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Create Task</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Task Board -->
+        <section class="board-section">
+            <div class="board">
+                <!-- TODO Column -->
+                <div class="board-column" data-status="TODO">
+                    <div class="column-header">
+                        <h3>📝 To Do</h3>
+                        <span class="task-count" id="countTodo">0</span>
+                    </div>
+                    <div class="task-list" id="todoTasks">
+                        <!-- Tasks will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- IN_PROGRESS Column -->
+                <div class="board-column" data-status="IN_PROGRESS">
+                    <div class="column-header">
+                        <h3>🔄 In Progress</h3>
+                        <span class="task-count" id="countProgress">0</span>
+                    </div>
+                    <div class="task-list" id="progressTasks">
+                        <!-- Tasks will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- DONE Column -->
+                <div class="board-column" data-status="DONE">
+                    <div class="column-header">
+                        <h3>✅ Done</h3>
+                        <span class="task-count" id="countDone">0</span>
+                    </div>
+                    <div class="task-list" id="doneTasks">
+                        <!-- Tasks will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Edit Modal -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>✏️ Edit Task</h2>
+                    <button class="modal-close" onclick="closeEditModal()">&times;</button>
+                </div>
+                <form id="editTaskForm">
+                    <input type="hidden" id="editTaskId">
+                    <div class="form-group">
+                        <label for="editTitle">Title *</label>
+                        <input type="text" id="editTitle" required minlength="3" maxlength="200">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editStatus">Status</label>
+                            <select id="editStatus">
+                                <option value="TODO">📝 To Do</option>
+                                <option value="IN_PROGRESS">🔄 In Progress</option>
+                                <option value="DONE">✅ Done</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPriority">Priority</label>
+                            <select id="editPriority">
+                                <option value="LOW">🟢 Low</option>
+                                <option value="MEDIUM">🟡 Medium</option>
+                                <option value="HIGH">🔴 High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">Description</label>
+                        <textarea id="editDescription" rows="3"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <span class="toast-message"></span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>ENGCE301 Software Design and Development - Week 6 N-Tier Architecture</p>
+            <p>🗄️ PostgreSQL | ⚙️ Node.js + Express | 🌐 Nginx | 🔒 HTTPS</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

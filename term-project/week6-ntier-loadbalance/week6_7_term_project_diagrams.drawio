@@ -1,0 +1,524 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="5">
+  <diagram id="week6-ntier-arch" name="Week6 - N-Tier Architecture">
+    <mxGraphModel dx="1426" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title6" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" value="Term Project Week 6: N-Tier Architecture&#xa;Redis Caching + Nginx Load Balancing" vertex="1">
+          <mxGeometry height="50" width="500" x="450" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="shape=mxgraph.basic.cloud_callout;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;fontStyle=1;" value="🌐 Browser (Client)" vertex="1">
+          <mxGeometry height="80" width="200" x="570" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#333;" target="nginx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1label" connectable="0" parent="e1" style="edgeLabel;html=1;fontSize=10;fontColor=#666;" value="Port 80 (HTTP)" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tier1bg" parent="1" style="rounded=1;whiteSpace=wrap;fillColor=#FFF3E0;strokeColor=#FF9800;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="100" width="600" x="370" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="tier1label" parent="1" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#E65100;" value="TIER 1: Web Tier" vertex="1">
+          <mxGeometry height="20" width="120" x="380" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontSize=12;fontStyle=1;" value="🔀 Nginx&#xa;Load Balancer&#xa;+ Static Files&#xa;(Round-Robin)" vertex="1">
+          <mxGeometry height="65" width="280" x="530" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2bg" parent="1" style="rounded=1;whiteSpace=wrap;fillColor=#E3F2FD;strokeColor=#2196F3;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="140" width="800" x="270" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2label" parent="1" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#0D47A1;" value="TIER 2: Application Tier (Horizontally Scaled)" vertex="1">
+          <mxGeometry height="20" width="300" x="280" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="app1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=11;align=center;" value="⚙️ App #1&#xa;Node.js :3000&#xa;───────&#xa;Controller&#xa;Service&#xa;Repository" vertex="1">
+          <mxGeometry height="95" width="150" x="310" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="app2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=11;align=center;" value="⚙️ App #2&#xa;Node.js :3000&#xa;───────&#xa;Controller&#xa;Service&#xa;Repository" vertex="1">
+          <mxGeometry height="95" width="150" x="530" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="app3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=11;align=center;" value="⚙️ App #3&#xa;Node.js :3000&#xa;───────&#xa;Controller&#xa;Service&#xa;Repository" vertex="1">
+          <mxGeometry height="95" width="150" x="750" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="e2a" edge="1" parent="1" source="nginx" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#2196F3;" target="app1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2b" edge="1" parent="1" source="nginx" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#2196F3;" target="app2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2c" edge="1" parent="1" source="nginx" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#2196F3;" target="app3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3bg" parent="1" style="rounded=1;whiteSpace=wrap;fillColor=#E8F5E9;strokeColor=#4CAF50;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="140" width="680" x="330" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3label" parent="1" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#1B5E20;" value="TIER 3: Data Tier" vertex="1">
+          <mxGeometry height="20" width="120" x="340" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=12;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=11;fontStyle=1;" value="⚡ Redis&#xa;Cache Layer&#xa;(In-Memory)&#xa;TTL: 60s" vertex="1">
+          <mxGeometry height="100" width="140" x="410" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="postgres" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;size=12;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=11;fontStyle=1;" value="🐘 PostgreSQL&#xa;Persistent DB&#xa;(tasks table)" vertex="1">
+          <mxGeometry height="100" width="140" x="760" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="e3r" edge="1" parent="1" source="app2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#4CAF50;dashed=1;" target="redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3rl" connectable="0" parent="e3r" style="edgeLabel;html=1;fontSize=9;fontColor=#388E3C;" value="Cache-Aside&#xa;HIT → return&#xa;MISS → query DB" vertex="1">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3p" edge="1" parent="1" source="app2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;strokeColor=#4CAF50;" target="postgres">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3pl" connectable="0" parent="e3p" style="edgeLabel;html=1;fontSize=9;fontColor=#388E3C;" value="SQL Queries" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="49" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dockernet" parent="1" style="text;html=1;fontSize=11;fontStyle=3;fontColor=#555;align=center;" value="🐳 Docker Network: taskboard-ntier" vertex="1">
+          <mxGeometry height="20" width="300" x="500" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="legend6" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=top;fillColor=#FAFAFA;strokeColor=#DDD;rounded=1;" value="🟠 Tier 1: Nginx LB&#xa;🔵 Tier 2: App ×3 (Scalable)&#xa;🟢 Tier 3: Redis + PostgreSQL" vertex="1">
+          <mxGeometry height="60" width="160" x="1000" y="220" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="week6-cache-flow" name="Week6 - Cache-Aside Pattern">
+    <mxGraphModel dx="1426" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ctitle" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=center;" value="Cache-Aside Pattern (Week 6)" vertex="1">
+          <mxGeometry height="30" width="300" x="140" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="req" parent="1" style="rounded=1;fillColor=#E1BEE7;strokeColor=#9C27B0;fontStyle=1;fontSize=12;" value="📱 Request&#xa;GET /api/tasks" vertex="1">
+          <mxGeometry height="60" width="140" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="capp" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontStyle=1;fontSize=12;" value="⚙️ App Service&#xa;(Node.js)" vertex="1">
+          <mxGeometry height="60" width="160" x="300" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="credis" parent="1" style="shape=cylinder3;size=10;fillColor=#FFF9C4;strokeColor=#FBC02D;fontStyle=1;fontSize=12;" value="⚡ Redis Cache" vertex="1">
+          <mxGeometry height="80" width="130" x="590" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="reshit" parent="1" style="rounded=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontStyle=1;fontSize=11;" value="✅ Response&#xa;(~2ms)" vertex="1">
+          <mxGeometry height="50" width="140" x="80" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ce1" edge="1" parent="1" source="req" style="strokeWidth=2;strokeColor=#333;" target="capp" value="①">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ce2" edge="1" parent="1" source="capp" style="strokeWidth=2;strokeColor=#FBC02D;fontColor=#F57F17;fontSize=10;" target="credis" value="② Check Cache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ce3hit" edge="1" parent="1" source="credis" style="strokeWidth=2;strokeColor=#4CAF50;dashed=1;fontColor=#2E7D32;fontSize=10;" target="capp" value="③a HIT → return">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ce3miss" edge="1" parent="1" source="capp" style="strokeWidth=2;strokeColor=#F44336;fontColor=#C62828;fontSize=10;" target="cdb" value="③b MISS → Query DB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ce4" edge="1" parent="1" source="cdb" style="strokeWidth=2;strokeColor=#FF9800;dashed=1;fontColor=#E65100;fontSize=10;" target="credis" value="④ Store in Cache">
+          <mxGeometry relative="1" x="-0.1429" y="-45" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ce5" edge="1" parent="1" source="capp" style="strokeWidth=2;strokeColor=#333;" target="reshit" value="⑤">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cwrite" parent="1" style="rounded=1;fillColor=#FFCDD2;strokeColor=#F44336;fontStyle=1;fontSize=11;" value="❌ POST/PUT/DELETE&#xa;→ Invalidate Cache" vertex="1">
+          <mxGeometry height="50" width="180" x="290" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ceinv" edge="1" parent="1" source="cwrite" style="strokeWidth=2;strokeColor=#F44336;dashed=1;fontSize=10;fontColor=#C62828;" target="credis" value="ลบ keys tasks:*">
+          <mxGeometry relative="1" x="-0.2928" y="19" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="655" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="csummary" parent="1" style="text;html=1;fontSize=10;align=left;fillColor=#F5F5F5;strokeColor=#DDD;rounded=1;" value="Summary:&#xa;🟢 HIT  = Redis → App → Client (~2ms)&#xa;🔴 MISS = Redis → DB → Redis → App → Client (~50ms)&#xa;❌ Write = DB → Delete Redis Keys → Next read = MISS" vertex="1">
+          <mxGeometry height="70" width="380" x="110" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="cdb" parent="1" style="shape=cylinder3;size=10;fillColor=#C8E6C9;strokeColor=#4CAF50;fontStyle=1;fontSize=12;" value="🐘 PostgreSQL" vertex="1">
+          <mxGeometry height="80" width="130" x="590" y="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="week7-eda-arch" name="Week7 - Event-Driven Architecture">
+    <mxGraphModel dx="1426" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t7" parent="1" style="text;html=1;fontSize=18;fontStyle=1;align=center;" value="Term Project Week 7: Event-Driven Architecture&#xa;RabbitMQ Pub/Sub + Microservices" vertex="1">
+          <mxGeometry height="50" width="500" x="380" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="br7" parent="1" style="shape=mxgraph.basic.cloud_callout;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontSize=13;fontStyle=1;" value="🌐 Browser" vertex="1">
+          <mxGeometry height="70" width="180" x="550" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontSize=11;fontStyle=1;align=center;" value="🌐 API Gateway&#xa;(Express.js :3000)&#xa;── Routing ──&#xa;/api/tasks → Task Svc&#xa;/api/notifications → Notif Svc&#xa;/api/audit → Audit Svc" vertex="1">
+          <mxGeometry height="100" width="300" x="490" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_1" edge="1" parent="1" source="br7" style="strokeWidth=2;strokeColor=#333;" target="gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tasksvc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=11;fontStyle=1;align=center;" value="📦 Task Service&#xa;(Express.js :3001)&#xa;─────────&#xa;CRUD + Publish Events&#xa;Controller → Service → Repo" vertex="1">
+          <mxGeometry height="100" width="220" x="220" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="notifsvc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9C27B0;fontSize=11;fontStyle=1;align=center;" value="🔔 Notification Service&#xa;(Express.js :3002)&#xa;─────────&#xa;Consume Events&#xa;Create Notifications" vertex="1">
+          <mxGeometry height="100" width="210" x="540" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="auditsvc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3F51B5;fontSize=11;fontStyle=1;align=center;" value="📋 Audit Service&#xa;(Express.js :3003)&#xa;─────────&#xa;Consume Events&#xa;Create Audit Trail" vertex="1">
+          <mxGeometry height="100" width="210" x="850" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_2a" edge="1" parent="1" source="gw" style="strokeWidth=2;strokeColor=#2196F3;fontSize=9;" target="tasksvc" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_2b" edge="1" parent="1" source="gw" style="strokeWidth=2;strokeColor=#9C27B0;fontSize=9;" target="notifsvc" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_2c" edge="1" parent="1" source="gw" style="strokeWidth=2;strokeColor=#3F51B5;fontSize=9;" target="auditsvc" value="HTTP">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="db7" parent="1" style="shape=cylinder3;size=10;fillColor=#C8E6C9;strokeColor=#4CAF50;fontSize=11;fontStyle=1;" value="🐘 PostgreSQL&#xa;(tasks table)" vertex="1">
+          <mxGeometry height="80" width="130" x="100" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_db" edge="1" parent="1" source="tasksvc" style="strokeWidth=2;strokeColor=#4CAF50;" target="db7" value="SQL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rmqbg" parent="1" style="rounded=1;fillColor=#FFF8E1;strokeColor=#FF6F00;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="180" width="740" x="300" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="rmqlabel" parent="1" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#E65100;" value="🐰 RabbitMQ (Message Broker)" vertex="1">
+          <mxGeometry height="25" width="250" x="310" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="exchange" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFE082;strokeColor=#FF8F00;fontSize=11;fontStyle=1;" value="📤 Exchange&#xa;task.events&#xa;(fanout)" vertex="1">
+          <mxGeometry height="100" width="140" x="400" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="nqueue" parent="1" style="shape=mxgraph.flowchart.delay;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#9C27B0;fontSize=11;fontStyle=1;" value="📥 notification_queue" vertex="1">
+          <mxGeometry height="45" width="170" x="650" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="aqueue" parent="1" style="shape=mxgraph.flowchart.delay;whiteSpace=wrap;html=1;fillColor=#C5CAE9;strokeColor=#3F51B5;fontSize=11;fontStyle=1;" value="📥 audit_queue" vertex="1">
+          <mxGeometry height="45" width="170" x="650" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_pub" edge="1" parent="1" source="tasksvc" style="strokeWidth=3;strokeColor=#FF8F00;fontStyle=1;fontSize=10;fontColor=#E65100;" target="exchange" value="📤 Publish&#xa;Events">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_fan1" edge="1" parent="1" source="exchange" style="strokeWidth=2;strokeColor=#FF8F00;fontSize=9;" target="nqueue" value="fanout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_fan2" edge="1" parent="1" source="exchange" style="strokeWidth=2;strokeColor=#FF8F00;fontSize=9;" target="aqueue" value="fanout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7_con1" edge="1" parent="1" source="nqueue" style="strokeWidth=2;strokeColor=#9C27B0;dashed=1;fontSize=9;fontColor=#7B1FA2;" target="notifsvc" value="📥 Consume">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="580" />
+              <mxPoint x="880" y="510" />
+              <mxPoint x="860" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7_con2" edge="1" parent="1" source="aqueue" style="strokeWidth=2;strokeColor=#3F51B5;dashed=1;fontSize=9;fontColor=#283593;" target="auditsvc" value="📥 Consume">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="653" />
+              <mxPoint x="970" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="evtbox" parent="1" style="text;html=1;fontSize=10;align=left;fillColor=#FAFAFA;strokeColor=#DDD;rounded=1;fontStyle=0;" value="Event Types:&#xa;🔵 TASK_CREATED&#xa;🟡 TASK_UPDATED&#xa;🟢 TASK_COMPLETED&#xa;🔴 TASK_DELETED" vertex="1">
+          <mxGeometry height="90" width="150" x="1080" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="dnet7" parent="1" style="text;html=1;fontSize=11;fontStyle=3;fontColor=#555;align=center;" value="🐳 Docker Network: taskboard-events" vertex="1">
+          <mxGeometry height="20" width="300" x="510" y="720" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="week7-event-flow" name="Week7 - Event Flow Sequence">
+    <mxGraphModel dx="1448" dy="893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ft" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=center;" value="Event Flow: POST /api/tasks (Create Task)" vertex="1">
+          <mxGeometry height="30" width="500" x="360" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#666;fontStyle=1;fontSize=13;" value="🌐 Client" vertex="1">
+          <mxGeometry height="35" width="100" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="1" style="rounded=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontStyle=1;fontSize=13;" value="🌐 Gateway" vertex="1">
+          <mxGeometry height="35" width="100" x="230" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontStyle=1;fontSize=13;" value="📦 Task Svc" vertex="1">
+          <mxGeometry height="35" width="100" x="410" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="1" style="rounded=1;fillColor=#C8E6C9;strokeColor=#4CAF50;fontStyle=1;fontSize=13;" value="🐘 PostgreSQL" vertex="1">
+          <mxGeometry height="35" width="100" x="580" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" parent="1" style="rounded=1;fillColor=#FFE082;strokeColor=#FF8F00;fontStyle=1;fontSize=13;" value="🐰 RabbitMQ" vertex="1">
+          <mxGeometry height="35" width="100" x="750" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l6" parent="1" style="rounded=1;fillColor=#F3E5F5;strokeColor=#9C27B0;fontStyle=1;fontSize=13;" value="🔔 Notif Svc" vertex="1">
+          <mxGeometry height="35" width="100" x="920" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l7" parent="1" style="rounded=1;fillColor=#E8EAF6;strokeColor=#3F51B5;fontStyle=1;fontSize=13;" value="📋 Audit Svc" vertex="1">
+          <mxGeometry height="35" width="100" x="1060" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vl1" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="105" as="sourcePoint" />
+            <mxPoint x="110" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl2" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="105" as="sourcePoint" />
+            <mxPoint x="280" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl3" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="105" as="sourcePoint" />
+            <mxPoint x="460" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl4" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="105" as="sourcePoint" />
+            <mxPoint x="630" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl5" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="105" as="sourcePoint" />
+            <mxPoint x="800" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl6" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="105" as="sourcePoint" />
+            <mxPoint x="970" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vl7" edge="1" parent="1" style="endArrow=none;dashed=1;strokeColor=#CCC;strokeWidth=2;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="105" as="sourcePoint" />
+            <mxPoint x="1110" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s1" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#333;fontSize=13;fontStyle=1;" value="① POST /api/tasks">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="140" as="sourcePoint" />
+            <mxPoint x="280" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s2" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#FF9800;fontSize=13;" value="② proxy → task-service:3001">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="180" as="sourcePoint" />
+            <mxPoint x="460" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s3" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#4CAF50;fontSize=13;" value="③ INSERT INTO tasks">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="230" as="sourcePoint" />
+            <mxPoint x="630" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s4" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#4CAF50;dashed=1;fontSize=13;" value="④ RETURNING *">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="270" as="sourcePoint" />
+            <mxPoint x="460" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s5" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#FF8F00;fontSize=13;fontStyle=1;" value="⑤ Publish TASK_CREATED event">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="320" as="sourcePoint" />
+            <mxPoint x="800" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s6a" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#333;dashed=1;fontSize=13;" value="⑥ 201 Created {task}">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="360" as="sourcePoint" />
+            <mxPoint x="280" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s6b" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#333;dashed=1;fontSize=13;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="380" as="sourcePoint" />
+            <mxPoint x="110" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="asyncline" edge="1" parent="1" style="endArrow=none;strokeColor=#FF0000;strokeWidth=1;dashed=1;fontSize=13;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="430" as="sourcePoint" />
+            <mxPoint x="1150" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="asynclbl" parent="1" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#D32F2F;align=center;" value="────── ✂️ Client ได้ response แล้ว (async จากนี้) ──────" vertex="1">
+          <mxGeometry height="20" width="400" x="300" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="s7a" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#9C27B0;fontSize=13;" value="⑦ Deliver to notification_queue">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="460" as="sourcePoint" />
+            <mxPoint x="970" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s7b" edge="1" parent="1" style="endArrow=block;strokeWidth=2;strokeColor=#3F51B5;fontSize=13;" value="⑦ Deliver to audit_queue">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="500" as="sourcePoint" />
+            <mxPoint x="1110" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s8a" parent="1" style="text;html=1;fontSize=13;fillColor=#F3E5F5;strokeColor=#9C27B0;rounded=1;" value="⑧ Create notification" vertex="1">
+          <mxGeometry height="30" width="160" x="890" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="s8b" parent="1" style="text;html=1;fontSize=13;fillColor=#E8EAF6;strokeColor=#3F51B5;rounded=1;" value="⑧ Write audit log" vertex="1">
+          <mxGeometry height="30" width="160" x="1030" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="s9a" edge="1" parent="1" style="endArrow=block;strokeWidth=1;strokeColor=#9C27B0;dashed=1;fontSize=13;" value="⑨ ACK ✓">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="570" as="sourcePoint" />
+            <mxPoint x="800" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s9b" edge="1" parent="1" style="endArrow=block;strokeWidth=1;strokeColor=#3F51B5;dashed=1;fontSize=13;" value="⑨ ACK ✓">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="600" as="sourcePoint" />
+            <mxPoint x="800" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="time1" parent="1" style="text;fontSize=13;fontColor=#1B5E20;fontStyle=1;align=center;" value="⏱️ ~50ms&#xa;(synchronous)" vertex="1">
+          <mxGeometry height="35" width="90" x="10" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="time2" parent="1" style="text;fontSize=13;fontColor=#B71C1C;fontStyle=1;align=center;" value="⏱️ ~100-500ms&#xa;(asynchronous,&#xa;client ไม่ต้องรอ)" vertex="1">
+          <mxGeometry height="45" width="90" x="10" y="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="week6-7-evolution" name="Week 6-7 Architecture Evolution">
+    <mxGraphModel dx="1448" dy="893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="evtitle" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=center;" value="Architecture Evolution: Week 3 → Week 7" vertex="1">
+          <mxGeometry height="30" width="400" x="370" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="w3bg" parent="1" style="rounded=1;fillColor=#FFEBEE;strokeColor=#EF5350;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="170" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w3t" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fontColor=#C62828;align=center;" value="Week 3&#xa;📦 Monolith" vertex="1">
+          <mxGeometry height="35" width="140" x="55" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="w3box" parent="1" style="rounded=1;fillColor=#FFCDD2;strokeColor=#EF5350;fontSize=12.5;align=center;" value="server.js&#xa;(ทุกอย่างอยู่ที่เดียว)&#xa;──────&#xa;Routes&#xa;Logic&#xa;DB Access&#xa;──────&#xa;SQLite" vertex="1">
+          <mxGeometry height="130" width="140" x="55" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="w3c" parent="1" style="text;fontSize=12.5;fontColor=#C62828;align=center;" value="1 File&#xa;1 Process" vertex="1">
+          <mxGeometry height="30" width="110" x="70" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" style="endArrow=block;strokeWidth=3;strokeColor=#666;fontSize=12.5;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="205" as="sourcePoint" />
+            <mxPoint x="260" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w45bg" parent="1" style="rounded=1;fillColor=#FFF3E0;strokeColor=#FF9800;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="170" x="270" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w45t" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fontColor=#E65100;align=center;" value="Week 4-5&#xa;🏛️ Layered + C/S" vertex="1">
+          <mxGeometry height="35" width="150" x="280" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="w45b1" parent="1" style="rounded=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontSize=12.5;" value="Frontend" vertex="1">
+          <mxGeometry height="30" width="140" x="285" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="w45b2" parent="1" style="rounded=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontSize=12.5;align=center;" value="API (Layered)&#xa;Controller→Service→Repo" vertex="1">
+          <mxGeometry height="40" width="140" x="285" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="w45b3" parent="1" style="rounded=1;fillColor=#FFE0B2;strokeColor=#FF9800;fontSize=12.5;" value="PostgreSQL" vertex="1">
+          <mxGeometry height="30" width="140" x="285" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="w45c" parent="1" style="text;fontSize=12.5;fontColor=#E65100;align=center;" value="3 Layers&#xa;2 Projects" vertex="1">
+          <mxGeometry height="30" width="110" x="300" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" style="endArrow=block;strokeWidth=3;strokeColor=#666;fontSize=12.5;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="205" as="sourcePoint" />
+            <mxPoint x="490" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w6bg" parent="1" style="rounded=1;fillColor=#E3F2FD;strokeColor=#2196F3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="240" width="220" x="500" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w6t" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fontColor=#0D47A1;align=center;" value="Week 6&#xa;🏗️ N-Tier + Redis + LB" vertex="1">
+          <mxGeometry height="35" width="200" x="510" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="w6b1" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=12.5;" value="Nginx (LB)" vertex="1">
+          <mxGeometry height="25" width="140" x="540" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="w6b2" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=12.5;" value="App×3 (Scaled)" vertex="1">
+          <mxGeometry height="25" width="140" x="540" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="w6b3" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=12.5;" value="Redis (Cache)" vertex="1">
+          <mxGeometry height="25" width="90" x="515" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="w6b4" parent="1" style="rounded=1;fillColor=#BBDEFB;strokeColor=#2196F3;fontSize=12.5;" value="PostgreSQL" vertex="1">
+          <mxGeometry height="25" width="90" x="615" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="w6c" parent="1" style="text;fontSize=12.5;fontColor=#0D47A1;align=center;" value="4 Tiers / 6 Containers&#xa;Redis Cache + LB&#xa;docker compose --scale" vertex="1">
+          <mxGeometry height="40" width="180" x="520" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" edge="1" parent="1" style="endArrow=block;strokeWidth=3;strokeColor=#666;fontSize=12.5;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="205" as="sourcePoint" />
+            <mxPoint x="770" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w7bg" parent="1" style="rounded=1;fillColor=#EDE7F6;strokeColor=#7C3AED;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="290" width="300" x="780" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w7t" parent="1" style="text;html=1;fontSize=12;fontStyle=1;fontColor=#4A148C;align=center;" value="Week 7&#xa;📡 Event-Driven + RabbitMQ" vertex="1">
+          <mxGeometry height="35" width="290" x="790" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b1" parent="1" style="rounded=1;fillColor=#D1C4E9;strokeColor=#7C3AED;fontSize=12.5;" value="API Gateway" vertex="1">
+          <mxGeometry height="25" width="130" x="870" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b2" parent="1" style="rounded=1;fillColor=#D1C4E9;strokeColor=#7C3AED;fontSize=12.5;" value="Task Svc" vertex="1">
+          <mxGeometry height="25" width="80" x="795" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b3" parent="1" style="rounded=1;fillColor=#D1C4E9;strokeColor=#7C3AED;fontSize=12.5;" value="Notif Svc" vertex="1">
+          <mxGeometry height="25" width="80" x="885" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b4" parent="1" style="rounded=1;fillColor=#D1C4E9;strokeColor=#7C3AED;fontSize=12.5;" value="Audit Svc" vertex="1">
+          <mxGeometry height="25" width="80" x="975" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b5" parent="1" style="rounded=1;fillColor=#FFE082;strokeColor=#FF8F00;fontSize=12.5;fontStyle=1;" value="🐰 RabbitMQ&#xa;(Pub/Sub)" vertex="1">
+          <mxGeometry height="35" width="180" x="840" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="w7b6" parent="1" style="rounded=1;fillColor=#D1C4E9;strokeColor=#7C3AED;fontSize=12.5;" value="PostgreSQL" vertex="1">
+          <mxGeometry height="25" width="80" x="840" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="w7c" parent="1" style="text;fontSize=12.5;fontColor=#4A148C;align=center;" value="4 Services / 6 Containers&#xa;Async Events&#xa;Loose Coupling&#xa;Independent Scaling" vertex="1">
+          <mxGeometry height="50" width="240" x="815" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="compbar" parent="1" style="rounded=1;fillColor=#F5F5F5;strokeColor=#DDD;" value="" vertex="1">
+          <mxGeometry height="100" width="510" x="150" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="comptext" parent="1" style="text;html=1;fontSize=12;align=left;fontFamily=monospace;" value="Complexity:     ★☆☆☆☆          ★★☆☆☆           ★★★☆☆            ★★★★☆&#xa;Scalability:      ★☆☆☆☆          ★★☆☆☆           ★★★★☆            ★★★★☆&#xa;Coupling:          Tight               Moderate            Moderate             Loose&#xa;Communication: Direct Call       HTTP (Sync)       HTTP (Sync)        Events (Async)" vertex="1">
+          <mxGeometry height="80" width="450" x="170" y="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
