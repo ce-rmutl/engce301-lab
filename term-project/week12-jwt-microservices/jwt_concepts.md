@@ -31,27 +31,27 @@
 │                     JWT ในชีวิตประจำวัน                                │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   เปรียบได้กับ: บัตรนักศึกษา RMUTL                                     │
+│   เปรียบได้กับ: บัตรนักศึกษา RMUTL                                        │
 │                                                                     │
 │   ┌──────────────────────────────────────────────────┐              │
 │   │  🎓 RMUTL Student Card                           │              │
-│   │  ─────────────────────────────────────────────  │              │
-│   │  Name:      สมชาย รักเรียน                          │              │
-│   │  ID:        63XXXXXXXXXX                          │              │
-│   │  Dept:      Software Engineering                  │              │
-│   │  Valid:     2023 – 2027                           │              │
-│   │  ─────────────────────────────────────────────  │              │
-│   │  [มหาวิทยาลัยประทับตราตรวจสอบได้]                     │              │
+│   │  ─────────────────────────────────────────────   │              │
+│   │  Name:      สมชาย รักเรียน                         │              │
+│   │  ID:        63XXXXXXXXXX                         │              │
+│   │  Dept:      Software Engineering                 │              │
+│   │  Valid:     2023 – 2027                          │              │
+│   │  ─────────────────────────────────────────────   │              │
+│   │  [มหาวิทยาลัยประทับตราตรวจสอบได้]                    │              │
 │   └──────────────────────────────────────────────────┘              │
 │                                                                     │
-│   • บัตร = JWT                                                      │
-│   • ข้อมูลในบัตร = Payload (อ่านได้)                                    │
+│   • บัตร = JWT                                                       │
+│   • ข้อมูลในบัตร = Payload (อ่านได้)                                     │
 │   • ตราประทับ = Signature (ยืนยันความถูกต้อง)                            │
-│   • วันหมดอายุ = exp claim                                           │
+│   • วันหมดอายุ = exp claim                                            │
 │   • ออกโดยมหาวิทยาลัย = ออกโดย Auth Service                           │
 │                                                                     │
-│   ไม่ต้องโทรไปถามมหาวิทยาลัยทุกครั้ง ว่าบัตรนี้จริงหรือเปล่า             │
-│   แค่ตรวจสอบตราประทับก็รู้แล้ว! ← นี่คือแนวคิดหลักของ JWT               │
+│   ไม่ต้องโทรไปถามมหาวิทยาลัยทุกครั้ง ว่าบัตรนี้จริงหรือเปล่า                      │
+│   แค่ตรวจสอบตราประทับก็รู้แล้ว! ← นี่คือแนวคิดหลักของ JWT                      │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -153,10 +153,10 @@ HMACSHA256(
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│              การทำงานของ Signature                                    │
+│              การทำงานของ Signature                                 │
 ├────────────────────────────────────────────────────────────────────┤
 │                                                                    │
-│   ฝั่งออก Token (Auth Service):                                     │
+│   ฝั่งออก Token (Auth Service):                                      │
 │   ─────────────────────────────                                    │
 │   header  = base64url({ alg, typ })                                │
 │   payload = base64url({ sub, role, exp, ... })                     │
@@ -167,14 +167,14 @@ HMACSHA256(
 │   ──────────────────────────────────                               │
 │   1. แยก token เป็น 3 ส่วน                                           │
 │   2. คำนวณ signature ใหม่จาก header+payload+SECRET_KEY              │
-│   3. เปรียบเทียบกับ signature ที่ได้รับ                                 │
-│   4. ถ้าตรง → token ไม่ถูกแก้ไข ✅                                    │
+│   3. เปรียบเทียบกับ signature ที่ได้รับ                                   │
+│   4. ถ้าตรง → token ไม่ถูกแก้ไข ✅                                     │
 │      ถ้าไม่ตรง → token ถูกปลอมแปลง ❌                                 │
 │   5. ตรวจ exp → ถ้าเกินเวลา → token หมดอายุ ❌                        │
 │                                                                    │
 │   💡 Key Insight:                                                  │
-│   Attacker แก้ Payload ได้ (เช่น เปลี่ยน role: "member" → "admin")   │
-│   แต่ signature จะไม่ตรงอีกต่อไป เพราะ Attacker ไม่รู้ SECRET_KEY!   │
+│   Attacker แก้ Payload ได้ (เช่น เปลี่ยน role: "member" → "admin")      │
+│   แต่ signature จะไม่ตรงอีกต่อไป เพราะ Attacker ไม่รู้ SECRET_KEY!        │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 ```
@@ -202,14 +202,14 @@ echo $TOKEN | cut -d'.' -f2 | base64 -d 2>/dev/null
 
 ```
 ┌───────────────────────────────────────────────────────────────────┐
-│  ทดลองที่ jwt.io:                                                    │
+│  ทดลองที่ jwt.io:                                                   │
 │                                                                   │
 │  1. เปิด https://jwt.io                                            │
-│  2. ด้านซ้าย: วาง JWT Token ที่ได้จาก Login                          │
-│  3. ด้านขวา: เห็น Header, Payload ที่ถูก decode                      │
-│  4. ใส่ Secret ใน "your-256-bit-secret" → ตรวจว่า signature ถูก     │
+│  2. ด้านซ้าย: วาง JWT Token ที่ได้จาก Login                            │
+│  3. ด้านขวา: เห็น Header, Payload ที่ถูก decode                        │
+│  4. ใส่ Secret ใน "your-256-bit-secret" → ตรวจว่า signature ถูก      │
 │                                                                   │
-│  🎯 สังเกต: เปลี่ยน role ใน payload แล้ว signature จะ invalid ทันที  │
+│  🎯 สังเกต: เปลี่ยน role ใน payload แล้ว signature จะ invalid ทันที     │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
 ```
@@ -236,10 +236,10 @@ echo $TOKEN | cut -d'.' -f2 | base64 -d 2>/dev/null
 │      │                  │────────────────►  │                  │         │
 │      │                  │                   │                  │         │
 │      │                  │                   │ 3. ค้นหา user     │         │
-│      │                  │                   │    ใน DB          │         │
+│      │                  │                   │    ใน DB         │         │
 │      │                  │                   │                  │         │
 │      │                  │                   │ 4. bcrypt.compare│         │
-│      │                  │                   │    (password)     │         │
+│      │                  │                   │    (password)    │         │
 │      │                  │                   │                  │         │
 │      │                  │                   │ 5. jwt.sign(     │         │
 │      │                  │                   │   { sub, role,   │         │
@@ -252,9 +252,9 @@ echo $TOKEN | cut -d'.' -f2 | base64 -d 2>/dev/null
 │      │ 7. token         │                   │                  │         │
 │      │◄─────────────────│                   │                  │         │
 │      │                  │                   │                  │         │
-│      │ (เก็บ token ไว้)  │                   │                  │         │
+│      │ (เก็บ token ไว้)   │                   │                  │         │
 │      │                  │                   │                  │         │
-│  ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ──        │
+│  ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ─── ──          │
 │                                                                          │
 │      │  8. GET /api/tasks/                  │                  │         │
 │      │  Authorization: Bearer <token>       │                  │         │
@@ -264,15 +264,15 @@ echo $TOKEN | cut -d'.' -f2 | base64 -d 2>/dev/null
 │      │                  │    token, SECRET) │                  │         │
 │      │                  │    → decoded      │                  │         │
 │      │                  │                   │                  │         │
-│      │                  │ 10. Forward + X-User-ID header      │         │
-│      │                  │──────────────────────────────────►  │         │
+│      │                  │ 10. Forward + X-User-ID header       │         │
+│      │                  │──────────────────────────────────►   │         │
 │      │                  │                   │                  │         │
 │      │                  │                   │                  │ 11. ค้นหา│
-│      │                  │                   │                  │    tasks │
-│      │                  │                   │                  │    ของ user│
+│      │                  │                   │                  │   tasks │
+│      │                  │                   │                  │ ของ user│
 │      │                  │                   │                  │         │
 │      │                  │ 12. { tasks }                        │         │
-│      │                  │◄────────────────────────────────────│         │
+│      │                  │ ◄────────────────────────────────────│         │
 │      │                  │                   │                  │         │
 │      │ 13. { tasks }    │                   │                  │         │
 │      │◄─────────────────│                   │                  │         │
@@ -283,37 +283,37 @@ echo $TOKEN | cut -d'.' -f2 | base64 -d 2>/dev/null
 ### 4.2 Token Storage: เก็บ JWT ที่ไหน?
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
+┌───────────────────────────────────────────────────────────────────────┐
 │                    ตัวเลือกการเก็บ JWT Token                             │
-├────────────────────────────────────────────────────────────────────────┤
-│                                                                        │
-│  1. localStorage (ที่ใช้ใน Lab นี้)                                       │
+├───────────────────────────────────────────────────────────────────────┤
+│                                                                       │
+│  1. localStorage (ที่ใช้ใน Lab นี้)                                        │
 │     ┌────────────────────────────────────────────────────────┐        │
 │     │  localStorage.setItem('token', jwt)                    │        │
 │     │  localStorage.getItem('token')                         │        │
 │     └────────────────────────────────────────────────────────┘        │
-│     ✅ ง่าย ทำ Auto-login ได้                                            │
-│     ❌ ถูก XSS attack ขโมยได้ (script อ่าน localStorage ได้)             │
-│                                                                        │
-│  2. sessionStorage                                                     │
+│     ✅ ง่าย ทำ Auto-login ได้                                           │
+│     ❌ ถูก XSS attack ขโมยได้ (script อ่าน localStorage ได้)              │
+│                                                                       │
+│  2. sessionStorage                                                    │
 │     ✅ หายเมื่อปิด browser tab                                           │
 │     ❌ ยังถูก XSS ขโมยได้                                                │
-│                                                                        │
-│  3. HttpOnly Cookie (แนะนำ Production)                                 │
-│     ┌────────────────────────────────────────────────────────┐        │
-│     │  Set-Cookie: jwt=<token>; HttpOnly; Secure; SameSite=Strict│     │
-│     └────────────────────────────────────────────────────────┘        │
-│     ✅ JavaScript อ่านไม่ได้ → ป้องกัน XSS                               │
-│     ❌ ต้องระวัง CSRF attack (ใช้ SameSite=Strict ป้องกัน)               │
-│                                                                        │
-│  4. Memory (In-memory)                                                 │
-│     ✅ ปลอดภัยที่สุด — ไม่เก็บถาวร                                        │
+│                                                                       │
+│  3. HttpOnly Cookie (แนะนำ Production)                                │
+│     ┌────────────────────────────────────────────────────────────┐    │
+│     │  Set-Cookie: jwt=<token>; HttpOnly; Secure; SameSite=Strict│    │
+│     └────────────────────────────────────────────────────────────┘    │
+│     ✅ JavaScript อ่านไม่ได้ → ป้องกัน XSS                                 │
+│     ❌ ต้องระวัง CSRF attack (ใช้ SameSite=Strict ป้องกัน)                 │
+│                                                                       │
+│  4. Memory (In-memory)                                                │
+│     ✅ ปลอดภัยที่สุด — ไม่เก็บถาวร                                          │
 │     ❌ Refresh page → logout ทันที                                      │
-│                                                                        │
+│                                                                       │
 │  📌 สำหรับ Lab: localStorage ง่ายดี                                      │
-│     สำหรับ Production: HttpOnly Cookie                                  │
-│                                                                        │
-└────────────────────────────────────────────────────────────────────────┘
+│     สำหรับ Production: HttpOnly Cookie                                 │
+│                                                                       │
+└───────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -386,43 +386,43 @@ try {
 ## 6. Algorithms ที่ใช้กับ JWT
 
 ```
-┌────────────────────────────────────────────────────────────────────┐
-│              JWT Signing Algorithms                                 │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                    │
-│  HMAC (Symmetric) — 1 key สำหรับทั้ง sign และ verify               │
+┌───────────────────────────────────────────────────────────────────┐
+│              JWT Signing Algorithms                               │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  HMAC (Symmetric) — 1 key สำหรับทั้ง sign และ verify                 │
 │  ┌──────────────────────────────────────────────────────────┐     │
-│  │  HS256, HS384, HS512                                      │     │
+│  │  HS256, HS384, HS512                                     │     │
 │  │                                                          │     │
 │  │  Auth Service ──sign──► JWT                              │     │
 │  │                                 JWT ──verify──► Service  │     │
 │  │         SECRET_KEY ──────────────────────────────────►   │     │
 │  │         (shared)                                         │     │
 │  │                                                          │     │
-│  │  ✅ เร็ว, ง่าย, เหมาะสำหรับ microservices ที่ trust กัน    │     │
-│  │  ❌ ทุก service ต้องรู้ secret → risk ถ้า service โดน hack │     │
+│  │  ✅ เร็ว, ง่าย, เหมาะสำหรับ microservices ที่ trust กัน        │     │
+│  │  ❌ ทุก service ต้องรู้ secret → risk ถ้า service โดน hack    │     │
 │  │                                                          │     │
-│  │  ✅ ใช้ใน Lab นี้                                          │     │
+│  │  ✅ ใช้ใน Lab นี้                                           │     │
 │  └──────────────────────────────────────────────────────────┘     │
-│                                                                    │
+│                                                                   │
 │  RSA / ECDSA (Asymmetric) — คนละ key สำหรับ sign และ verify        │
 │  ┌──────────────────────────────────────────────────────────┐     │
-│  │  RS256, RS384, RS512, ES256                               │     │
+│  │  RS256, RS384, RS512, ES256                              │     │
 │  │                                                          │     │
 │  │  Auth Service ──[Private Key]──sign──► JWT               │     │
 │  │                                    JWT ──[Public Key]──► │     │
 │  │                                           verify         │     │
 │  │                                                          │     │
-│  │  ✅ Services อื่นรู้แค่ Public Key → ปลอดภัยกว่า           │     │
+│  │  ✅ Services อื่นรู้แค่ Public Key → ปลอดภัยกว่า                │     │
 │  │  ✅ เหมาะกับ Multi-tenant, Public API                     │     │
-│  │  ❌ ช้ากว่า HMAC เล็กน้อย ซับซ้อนกว่า                      │     │
+│  │  ❌ ช้ากว่า HMAC เล็กน้อย ซับซ้อนกว่า                           │     │
 │  └──────────────────────────────────────────────────────────┘     │
-│                                                                    │
+│                                                                   │
 │  📌 เลือก:                                                         │
-│  • Single organization, Internal services → HS256 (ง่าย)          │
-│  • Public API, Multiple parties → RS256 (ปลอดภัยกว่า)              │
-│                                                                    │
-└────────────────────────────────────────────────────────────────────┘
+│  • Single organization, Internal services → HS256 (ง่าย)           │
+│  • Public API, Multiple parties → RS256 (ปลอดภัยกว่า)               │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -436,25 +436,25 @@ try {
 │   Session             │   JWT                                              │
 ├───────────────────────┼────────────────────────────────────────────────────┤
 │                       │                                                    │
-│ Server เก็บ state:    │ Server ไม่เก็บ state:                              │
-│ session_id → user_data│ ข้อมูลอยู่ใน token ทั้งหมด                           │
+│ Server เก็บ state:    │ Server ไม่เก็บ state:                                 │
+│ session_id → user_data│ ข้อมูลอยู่ใน token ทั้งหมด                               │
 │                       │                                                    │
 │  Browser              │  Browser                                           │
-│    │ Cookie: sess_id  │    │ Header: Bearer token                         │
+│    │ Cookie: sess_id  │    │ Header: Bearer token                          │
 │    ▼                  │    ▼                                               │
 │  Server               │  Server                                            │
-│    │ ค้นใน Session DB  │    │ verify token เท่านั้น                          │
-│    │ (Redis/Memory)   │    │ (ไม่ต้องค้น DB)                                │
+│    │ ค้นใน Session DB  │    │ verify token เท่านั้น                            │
+│    │ (Redis/Memory)   │    │ (ไม่ต้องค้น DB)                                  │
 │    ▼                  │    ▼                                               │
 │  Session Data         │  Decoded Payload                                   │
 │                       │                                                    │
 ├───────────────────────┼────────────────────────────────────────────────────┤
-│  ✅ Revoke ได้ทันที    │  ❌ Revoke ยาก (ต้องรอ expire)                      │
-│  ✅ เก็บข้อมูลเยอะได้   │  ✅ Stateless (Scalable)                          │
-│  ❌ ต้องมี Session DB  │  ✅ ไม่ต้อง DB สำหรับ verify                       │
-│  ❌ Scale ยาก (sticky) │  ✅ Microservices friendly                         │
-│  ✅ ปลอดภัยกว่าสำหรับ  │  ❌ Payload อ่านได้ (Base64)                       │
-│     sensitive data    │  ✅ Cross-domain ได้ง่าย                           │
+│  ✅ Revoke ได้ทันที      │  ❌ Revoke ยาก (ต้องรอ expire)                      │
+│  ✅ เก็บข้อมูลเยอะได้     │  ✅ Stateless (Scalable)                           │
+│  ❌ ต้องมี Session DB   │  ✅ ไม่ต้อง DB สำหรับ verify                          │
+│  ❌ Scale ยาก (sticky)│  ✅ Microservices friendly                         │
+│  ✅ ปลอดภัยกว่าสำหรับ    │  ❌ Payload อ่านได้ (Base64)                         │
+│     sensitive data    │  ✅ Cross-domain ได้ง่าย                             │
 ├───────────────────────┴────────────────────────────────────────────────────┤
 │  📌 เลือก:                                                                  │
 │  • Monolith, Session-critical app → Session                                │
@@ -469,26 +469,26 @@ try {
 ### 8.1 Secret Key Management
 
 ```
-┌────────────────────────────────────────────────────────────────────┐
-│              JWT Secret Key: Do's and Don'ts                       │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                    │
-│  ✅ DO:                                                            │
-│  • ความยาวอย่างน้อย 256 bits (32 bytes) สำหรับ HS256               │
-│  • Generate แบบ random:                                            │
-│    node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-│  • เก็บใน Environment Variable เท่านั้น                              │
-│  • ใช้ Secret Manager (AWS Secrets Manager, Vault) ใน Production   │
-│  • Rotate key เป็นประจำ                                             │
-│                                                                    │
-│  ❌ DON'T:                                                         │
-│  • ❌ "secret" — สั้นเกินไป, คาดเดาได้                              │
-│  • ❌ "mysecretkey123" — ง่ายเกินไป                                 │
-│  • ❌ ใส่ใน code โดยตรง (hardcode)                                   │
-│  • ❌ Push ขึ้น Git                                                 │
-│  • ❌ ใช้ key เดียวกันทุก environment (dev/staging/prod)             │
-│                                                                    │
-└────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│              JWT Secret Key: Do's and Don'ts                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ✅ DO:                                                                     │
+│  • ความยาวอย่างน้อย 256 bits (32 bytes) สำหรับ HS256                           │
+│  • Generate แบบ random:                                                     │
+│    node -e "console.log(require('crypto').randomBytes(32).toString('hex'))" │
+│  • เก็บใน Environment Variable เท่านั้น                                         │
+│  • ใช้ Secret Manager (AWS Secrets Manager, Vault) ใน Production             │
+│  • Rotate key เป็นประจำ                                                      │
+│                                                                             │
+│  ❌ DON'T:                                                                  │
+│  • ❌ "secret" — สั้นเกินไป, คาดเดาได้                                          │
+│  • ❌ "mysecretkey123" — ง่ายเกินไป                                           │
+│  • ❌ ใส่ใน code โดยตรง (hardcode)                                           │
+│  • ❌ Push ขึ้น Git                                                           │
+│  • ❌ ใช้ key เดียวกันทุก environment (dev/staging/prod)                        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```bash
@@ -519,18 +519,18 @@ await db.query(
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│              JWT Validation Checklist (ทุกครั้งที่ verify)             │
+│              JWT Validation Checklist (ทุกครั้งที่ verify)              │
 ├────────────────────────────────────────────────────────────────────┤
 │                                                                    │
-│  ☐ 1. ตรวจ Format: ต้องมี 3 ส่วนคั่นด้วย "."                          │
-│  ☐ 2. ตรวจ Algorithm: alg ต้องเป็นที่อนุญาต (ไม่ใช่ "none")          │
-│  ☐ 3. ตรวจ Signature: ต้องตรงกับ header+payload ด้วย SECRET          │
-│  ☐ 4. ตรวจ exp: ต้องไม่หมดอายุ                                       │
-│  ☐ 5. ตรวจ nbf (ถ้ามี): ต้องถึงเวลาที่ใช้ได้แล้ว                      │
-│  ☐ 6. ตรวจ iss (ถ้า strict): ต้องออกโดย issuer ที่ถูกต้อง              │
-│  ☐ 7. ตรวจ aud (ถ้า strict): ต้องเป็น audience ที่ถูกต้อง              │
+│  ☐ 1. ตรวจ Format: ต้องมี 3 ส่วนคั่นด้วย "."                             │
+│  ☐ 2. ตรวจ Algorithm: alg ต้องเป็นที่อนุญาต (ไม่ใช่ "none")               │
+│  ☐ 3. ตรวจ Signature: ต้องตรงกับ header+payload ด้วย SECRET           │
+│  ☐ 4. ตรวจ exp: ต้องไม่หมดอายุ                                        │
+│  ☐ 5. ตรวจ nbf (ถ้ามี): ต้องถึงเวลาที่ใช้ได้แล้ว                            │
+│  ☐ 6. ตรวจ iss (ถ้า strict): ต้องออกโดย issuer ที่ถูกต้อง                │
+│  ☐ 7. ตรวจ aud (ถ้า strict): ต้องเป็น audience ที่ถูกต้อง                 │
 │                                                                    │
-│  jsonwebtoken library ทำ 1-5 ให้อัตโนมัติเมื่อเรียก jwt.verify()     │
+│  jsonwebtoken library ทำ 1-5 ให้อัตโนมัติเมื่อเรียก jwt.verify()          │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 ```
@@ -555,15 +555,15 @@ const decoded = jwt.verify(token, SECRET, {
 │              "alg: none" Attack                                    │
 ├────────────────────────────────────────────────────────────────────┤
 │                                                                    │
-│  Attacker ส่ง token ที่มี header:                                   │
+│  Attacker ส่ง token ที่มี header:                                      │
 │  { "alg": "none", "typ": "JWT" }                                   │
 │                                                                    │
-│  และ payload ที่แก้ไขแล้ว:                                          │
-│  { "sub": "user-001", "role": "admin" }  ← เปลี่ยน role เป็น admin!│
+│  และ payload ที่แก้ไขแล้ว:                                             │
+│  { "sub": "user-001", "role": "admin" }  ← เปลี่ยน role เป็น admin!   │
 │                                                                    │
-│  ถ้า library ไม่ตรวจ alg → ไม่มี signature verification → ผ่าน!    │
+│  ถ้า library ไม่ตรวจ alg → ไม่มี signature verification → ผ่าน!         │
 │                                                                    │
-│  ป้องกัน: ระบุ algorithms ที่อนุญาตอย่างชัดเจน                       │
+│  ป้องกัน: ระบุ algorithms ที่อนุญาตอย่างชัดเจน                             │
 │  jwt.verify(token, secret, { algorithms: ['HS256'] })              │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
@@ -822,32 +822,32 @@ app.post('/auth/refresh', async (req, res) => {
 │  สร้าง Token:                                                           │
 │  const token = jwt.sign(payload, SECRET, { expiresIn: '1h' })          │
 │                                                                        │
-│  ตรวจสอบ Token:                                                         │
+│  ตรวจสอบ Token:                                                        │
 │  const decoded = jwt.verify(token, SECRET)                             │
 │                                                                        │
 │  Decode โดยไม่ verify:                                                  │
 │  const decoded = jwt.decode(token)                                     │
 │                                                                        │
 │  Error types:                                                          │
-│  • TokenExpiredError — token หมดอายุ                                     │
-│  • JsonWebTokenError — token ไม่ถูกต้อง / signature ผิด                 │
-│  • NotBeforeError — token ยังไม่ถึงเวลาใช้                               │
+│  • TokenExpiredError — token หมดอายุ                                    │
+│  • JsonWebTokenError — token ไม่ถูกต้อง / signature ผิด                    │
+│  • NotBeforeError — token ยังไม่ถึงเวลาใช้                                 │
 │                                                                        │
 │  ส่งใน HTTP:                                                            │
 │  Authorization: Bearer <token>                                         │
 │                                                                        │
 │  Best Practices:                                                       │
-│  ✅ Secret ยาว 32+ bytes random                                         │
-│  ✅ เก็บ Secret ใน env var                                               │
+│  ✅ Secret ยาว 32+ bytes random                                        │
+│  ✅ เก็บ Secret ใน env var                                              │
 │  ✅ ระบุ { algorithms: ['HS256'] } ตอน verify                           │
-│  ✅ ตรวจสอบ exp เสมอ                                                     │
+│  ✅ ตรวจสอบ exp เสมอ                                                   │
 │  ✅ ใช้ HttpOnly Cookie ใน Production                                   │
-│  ❌ อย่าใส่ password/secret ใน payload                                  │
-│  ❌ อย่าใช้ alg: "none"                                                 │
-│  ❌ อย่า push .env ขึ้น Git                                              │
+│  ❌ อย่าใส่ password/secret ใน payload                                   │
+│  ❌ อย่าใช้ alg: "none"                                                  │
+│  ❌ อย่า push .env ขึ้น Git                                               │
 │                                                                        │
 │  Debug:                                                                │
-│  https://jwt.io — decode & verify JWT ออนไลน์                          │
+│  https://jwt.io — decode & verify JWT ออนไลน์                           │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
