@@ -1,4 +1,4 @@
-# 🔐 คู่มือปฏิบัติการ ENGSE207 — สัปดาห์ที่ 12
+# 🔐 คู่มือปฏิบัติการ ENGCE301 — สัปดาห์ที่ 12
 ## Security-Aware Architecture: Task Board พร้อม Auth, JWT และ Centralized Logging
 
 **สัปดาห์:** 12 | **ระยะเวลา:** 3 ชั่วโมง | **ระดับความยาก:** ⭐⭐⭐⭐ | **Version:** 2.0

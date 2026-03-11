@@ -1,4 +1,4 @@
-# 🔐 คู่มือปฏิบัติการ ENGSE207 — สัปดาห์ที่ 12
+# 🔐 คู่มือปฏิบัติการ ENGCE301 — สัปดาห์ที่ 12
 ## Security-Aware Architecture: Task Board พร้อม Auth, JWT และ Centralized Logging
 
 **สัปดาห์:** 12 | **ระยะเวลา:** 3 ชั่วโมง | **ระดับความยาก:** ⭐⭐⭐⭐
@@ -4023,6 +4023,6 @@ sudo lsof -i :3000
 ---
 
 *Document Version: 1.1 (Revised — Promtail Added, Bug Fixes Applied)*
-*Course: ENGSE207 Software Architecture — Week 12 Lab*
+*Course: ENGCE301 Software Design and Development — Week 12 Lab*
 *Instructor: นายธนิต เกตุแก้ว*
 *มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา*
