@@ -1,5 +1,5 @@
 # 🎫 หลักการ JWT (JSON Web Token) — อย่างละเอียด
-## ENGSE207 Software Architecture — เอกสารประกอบการเรียน
+## ENGCE301 Software Design and Development — เอกสารประกอบการเรียน
 
 ---
 
@@ -888,6 +888,6 @@ API Gateway / Service
 ---
 
 *Document Version: 1.0*
-*Course: ENGSE207 Software Architecture*
+*Course: ENGCE301 Software Design and Development*
 *Instructor: นายธนิต เกตุแก้ว*
 *มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา*
